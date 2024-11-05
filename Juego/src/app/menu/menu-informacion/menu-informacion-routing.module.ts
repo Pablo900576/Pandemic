@@ -5,7 +5,7 @@ import { InformacionComponent } from './informacion/informacion.component';
 
 const routes: Routes = [
     {path:'', component: InformacionComponent},
-    {path:'reglas', component: InformacionComponent},
+    {path:'informacion', component: InformacionComponent},
     {path:'autores', component: AutoresComponent},
 ];
 
