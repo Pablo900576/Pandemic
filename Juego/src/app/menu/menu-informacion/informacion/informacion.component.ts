@@ -16,7 +16,6 @@ export class InformacionComponent {
     { label: 'Virus', description: '3 distintos tipos de virus, con 3 distintos niveles y 1 vacuna para cada uno. Si una ciudad supera el nivel 3 de cualquier virus ocurrirá un brote, es decir, se expande ese virus a las ciudades colindantes.' },
     { label: 'Tienda', description: 'En desarrollo...' },
     { label: 'Cómo terminar la partida', description: 'Al superar x nivel de contagio, pierdes. Al completar las 3 vacunas, ganas.' },
-    { label: 'Autores', description: 'Miguel Rodríguez y Pablo Escudero.' }
   ];
   
   expandedIndex = 0;
