@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReglasComponent } from './reglas.component';
+import { ReglasComponent } from './informacion.component';
 
 describe('ReglasComponent', () => {
   let component: ReglasComponent;
