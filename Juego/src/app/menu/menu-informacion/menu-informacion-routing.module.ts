@@ -4,6 +4,7 @@ import { AutoresComponent } from './autores/autores.component';
 import { InformacionComponent } from './informacion/informacion.component';
 
 const routes: Routes = [
+    {path:'', component: InformacionComponent},
     {path:'reglas', component: InformacionComponent},
     {path:'autores', component: AutoresComponent},
 ];

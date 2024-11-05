@@ -6,6 +6,7 @@ const routes: Routes = [
     { path: '', component: MenuJuegoComponent },
     {path:'menu', component: MenuJuegoComponent},
     {path:'menuInfo', loadChildren: () => import('./menu-informacion/menu-informacion.module').then(m => m.MenuInformacionModule) },
+    {path:'perfil', loadChildren: () => import('./perfil/perfil.module').then(m => m.PerfilModule) },
 ];
 
 
