@@ -1,0 +1,64 @@
+
+body{
+   margin: -10px;
+   padding: 0;
+   height: 100%;
+   min-height: 100vh;
+   background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?cs=srgb&dl=pexels-philippedonn-1169754.jpg&fm=jpg");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.general{
+    width: 300px;
+    min-height: 200px;
+    display: flex;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(186, 208, 211,0.9) ;
+}
+
+.autores{
+    font-size: 25px;
+    padding: 15px;
+    font-style: italic;
+}
+
+.dedo {
+    width: 250px;
+    height: auto;
+}
+
+.contenedor{
+    display: flex;
+}
+
+#dedo2 {
+    transform: scaleX(-1);
+}
+
+P{
+    font-weight: 1000;
+    color: #efb810;
+    font-size: 40px;
+    position: absolute;
+    top: 25%;
+    animation: mover 1.5s linear; /* Aplica la animación */
+}
+
+/* Definición de la animación */
+@keyframes mover {
+    0% {
+        transform: translateX(-50vw); /* Comienza desde fuera de la pantalla a la izquierda */
+    }
+
+    100% {
+        transform: translateX(0vw); /* Regresa al extremo izquierdo */
+    }
+}
