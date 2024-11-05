@@ -1,9 +1,11 @@
 
 body{
-   margin: -10px;
+    margin: -10px;
    padding: 0;
    height: 100%;
    min-height: 100vh;
+   width: 100%;
+   min-width: 100vw;
    background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?cs=srgb&dl=pexels-philippedonn-1169754.jpg&fm=jpg");
     background-position: center;
     background-size: cover;
@@ -30,7 +32,11 @@ body{
     font-style: italic;
 }
 
-.dedo {
+.flecha{
+    cursor: pointer;
+}
+
+img {
     width: 250px;
     height: auto;
 }
@@ -47,8 +53,7 @@ P{
     font-weight: 1000;
     color: #efb810;
     font-size: 40px;
-    position: absolute;
-    top: 25%;
+
     animation: mover 1.5s linear; /* Aplica la animación */
 }
 
