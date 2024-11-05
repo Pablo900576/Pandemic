@@ -5,9 +5,12 @@
     min-height: 100vh;
     height: auto;
     width: 100%;
+    min-width: 100vw;
     background-image: url(/images/fotoMenuPrincipal.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position:center;
+    margin: -10px;
 }
 
 .input {

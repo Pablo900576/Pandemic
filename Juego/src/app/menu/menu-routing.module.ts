@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MenuJuegoComponent } from './menu-juego/menu-juego.component';
-import { ReglasComponent } from './reglas/reglas.component';
-import { AutoresComponent } from './autores/autores.component';
+import { MenuInformacionModule } from './menu-informacion/menu-informacion.module';
+
 
 const routes: Routes = [
     { path: '', component: MenuJuegoComponent },
-    {path:'reglas', component: ReglasComponent},
-    {path:'autores', component: AutoresComponent},
+    {path:'menu', component: MenuJuegoComponent},
+    {path:'menuInfo', loadChildren: () => import('./menu-informacion/menu-informacion.module').then(m => m.MenuInformacionModule) },
+
 ];
 
 
