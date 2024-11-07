@@ -1,0 +1,116 @@
+body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+}
+.general{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: whitesmoke
+    ;
+    padding: 20px;
+    margin: 0 auto;
+    height: 70vh;
+    width: 50vw;
+    min-width: 200px;
+    max-width: 600px;
+    min-height: 400px;
+    border-radius: 10%;
+    border: solid 1px black;
+}
+
+.cabecera{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+    padding: 10px;
+}
+
+.cabecera p{
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.imagenPerfil{
+    border-radius: 50%;
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+    margin: 10px 0;
+}
+
+.informacion, .ubicacion{
+    font-size: 0.9rem;
+    margin: 2px 0;
+}
+
+.numeros{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px 0;
+}
+@media (max-width: 950px){
+    .numeros{
+        flex-direction: column;
+    }
+}
+
+.numeros div{
+    font-size: 1rem;
+}
+
+.redes{
+    display: flex;
+    justify-content: space-around;
+
+    width: 100%;
+    padding: 10px 0;
+}
+
+.redes button{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid black;
+
+    cursor: pointer;
+}
+
+.redes .facebook{
+    background-image: url("/imagenes/facebook.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.redes .twitter{
+    background-image: url("/imagenes/twitter.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.redes .instagram{
+    background-image: url("/imagenes/instagram.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.redes .youtube{
+    background-image: url("/imagenes/youtube.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.redes .gitHub{
+    background-image: url("/imagenes/github.png");
+    background-position: center;
+    background-size: cover;
+}
