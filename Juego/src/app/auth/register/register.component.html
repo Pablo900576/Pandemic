@@ -22,8 +22,7 @@
             <small *ngIf="miFormulario.get('contraseña')?.errors?.['required']">El contraseña es obligatorio.</small>
             <small *ngIf="miFormulario.get('contraseña')?.errors?.['minlength']">La contraseña tiene que tener mas de 5
                 caracteres.</small>
-            <small *ngIf="miFormulario.get('contraseña')?.errors?.['maxlength']">La contraseña tiene que tener menos de
-                10
+            <small *ngIf="miFormulario.get('contraseña')?.errors?.['maxlength']">La contraseña tiene que tener menos de 10
                 caracteres.</small>
         </div>
 
@@ -34,7 +33,11 @@
             </div>
             <span class="span">Olvidaste la contraseña?</span>
         </div>
-        <button class="button-submit" type="submit" routerLink="menu" >Inicia Sesión</button>
+        <button class="button-submit" type="submit" routerLink="menu" [disabled]="miFormulario.invalid"
+            (click)="mensaje()">Inicia Sesión</button>
+        <div *ngIf="mostrarError" class="error-message">
+            No se puede acceder, compruebe sus credenciales.
+        </div>
         <p class="p">No tienes cuenta? <span class="span">Registro</span></p>
         <p class="p line">O Con</p>
 
