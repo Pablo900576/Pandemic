@@ -1,0 +1,40 @@
+.general {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-image: url(/images/fondoCargarPartida.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 70vh;
+    gap: 100px;
+}
+
+.button {
+    border: none;
+    width: 30vh;
+    height: 10vh;
+    border-radius: 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #292729;
+    cursor: pointer;
+    font-size: 2vh;
+  }
+  
+  .button:hover {
+    background: linear-gradient(#A47CF3,#683FEA);
+  }
+  
+  .button:hover {
+    color: white;
+    font-size: 2.5vh;
+  }

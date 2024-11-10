@@ -1,12 +1,10 @@
-
-body{
-
-   padding: 0;
-   height: auto;
-   min-height: 100vh;
-   width: auto;
-   min-width: 100vw;
-   background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?cs=srgb&dl=pexels-philippedonn-1169754.jpg&fm=jpg");
+body {
+    padding: 0;
+    height: auto;
+    min-height: 100vh;
+    width: auto;
+    min-width: 100vw;
+    background-image: url("https://images.pexels.com/photos/1169754/pexels-photo-1169754.jpeg?cs=srgb&dl=pexels-philippedonn-1169754.jpg&fm=jpg");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -15,7 +13,7 @@ body{
     flex-direction: column;
 }
 
-.general{
+.general {
     width: 300px;
     min-height: 200px;
     display: flex;
@@ -23,16 +21,16 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgba(186, 208, 211,0.9) ;
+    background-color: rgba(186, 208, 211, 0.9);
 }
 
-.autores{
+.autores {
     font-size: 25px;
     padding: 15px;
     font-style: italic;
 }
 
-.flecha{
+.flecha {
     cursor: pointer;
 }
 
@@ -41,7 +39,7 @@ img {
     height: auto;
 }
 
-.contenedor{
+.contenedor {
     display: flex;
 }
 
@@ -49,21 +47,22 @@ img {
     transform: scaleX(-1);
 }
 
-P{
+P {
     font-weight: 1000;
     color: #efb810;
     font-size: 40px;
-
-    animation: mover 1.5s linear; /* Aplica la animación */
+    animation: mover 1.5s linear;
 }
 
 /* Definición de la animación */
 @keyframes mover {
     0% {
-        transform: translateX(-50vw); /* Comienza desde fuera de la pantalla a la izquierda */
+        transform: translateX(-50vw);
+        /* Comienza desde fuera de la pantalla a la izquierda */
     }
 
     100% {
-        transform: translateX(0vw); /* Regresa al extremo izquierdo */
+        transform: translateX(0vw);
+        /* Regresa al extremo izquierdo */
     }
 }

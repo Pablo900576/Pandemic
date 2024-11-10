@@ -1,0 +1,9 @@
+.general {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    background-image: url(/images/fotoMapa.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
