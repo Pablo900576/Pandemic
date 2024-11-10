@@ -1,3 +1,6 @@
 <div class="general">
-    
+    <div *ngFor="let city of cities" class="city region-{{city.region}}" [style.left.px]="city.coordinates.x"
+        [style.top.px]="city.coordinates.y" [title]="city.name" (click)="onCityClick(city)">
+        <div class="city-name">{{city.name}}</div>
+    </div>
 </div>
