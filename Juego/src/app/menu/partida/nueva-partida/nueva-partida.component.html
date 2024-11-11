@@ -1,6 +1,15 @@
 <div class="general">
-    <div *ngFor="let city of cities" class="city region-{{city.region}}" [style.left.px]="city.coordinates.x"
-        [style.top.px]="city.coordinates.y" [title]="city.name" (click)="onCityClick(city)">
-        <div class="city-name">{{city.name}}</div>
-    </div>
+    <button *NgIf="getCityByCoordinates() as city">
+        <h2>{{ city.name }}</h2>
+        <p><strong>Región:</strong> {{ city.region }}</p>
+        <p><strong>Conectado a:</strong> {{ city.connectedCities.join(', ') }}</p>
+        <p><strong>Centro de investigación:</strong> {{ city.researchCenter ? 'Sí' : 'No' }}</p>
+        <p><strong>Enfermedades:</strong></p>
+        <ul>
+          <li>Verde: {{ city.diseaseCount.green }}</li>
+          <li>Rojo: {{ city.diseaseCount.red }}</li>
+          <li>Azul: {{ city.diseaseCount.blue }}</li>
+          <li>Amarillo: {{ city.diseaseCount.yellow }}</li>
+        </ul>
+    </button>
 </div>

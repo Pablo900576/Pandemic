@@ -33,11 +33,11 @@
             </div>
             <span class="span">Olvidaste la contraseña?</span>
         </div>
-        <button class="button-submit" type="submit" routerLink="menu" [disabled]="miFormulario.invalid"
-            (click)="mensaje()">Inicia Sesión</button>
-        <div *ngIf="mostrarError" class="error-message">
+        <button formControlName="boton" class="button-submit" type="submit" routerLink="menu" [disabled]="miFormulario.invalid"
+        >Inicia Sesión</button>
+        <small *ngIf="miFormulario.invalid && miFormulario.get('boton')?.touched" class="error-message">
             No se puede acceder, compruebe sus credenciales.
-        </div>
+        </small>
         <p class="p">No tienes cuenta? <span class="span">Registro</span></p>
         <p class="p line">O Con</p>
 

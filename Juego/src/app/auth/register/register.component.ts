@@ -17,6 +17,7 @@ export class RegisterComponent {
   miFormulario = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     contraseña: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
+    boton: new FormControl('')
   });
 
   enviar() {
@@ -24,16 +25,6 @@ export class RegisterComponent {
       console.log(this.miFormulario.value);
     } else {
       console.log('Error maquina.')
-    }
-  }
-
-  mensaje() {
-    if (this.miFormulario.invalid) {
-      this.mostrarError = true;
-      
-      setTimeout(() => {
-        this.mostrarError = false;
-      }, 3000);
     }
   }
 
