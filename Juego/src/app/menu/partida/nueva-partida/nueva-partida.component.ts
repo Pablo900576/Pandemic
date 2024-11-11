@@ -1,19 +1,25 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nueva-partida',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './nueva-partida.component.html',
   styleUrl: './nueva-partida.component.css'
 })
 export class NuevaPartidaComponent{
-  getCityByCoordinates(x: number, y: number) {
-    return this.cities.cities.find(city => city.coordinates.x === x && city.coordinates.y === y);
+
+  selectedCity: any = null; 
+  selectCity(city: any) {
+    this.selectedCity = city;
   }
 
-  cities={
-    "cities": [
+  closeCityInfo() {
+    this.selectedCity = null;
+  }
+
+  cities=[
       {
         "name": "San Francisco",
         "region": 0,
@@ -1078,6 +1084,5 @@ export class NuevaPartidaComponent{
           "yellow": 0
         }
       }
-    ]
+    ];
   }
-}
