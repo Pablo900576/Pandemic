@@ -1,36 +1,66 @@
-.general {
-    width: 100%;
-    min-height: 100vh;
-    height: auto;
-
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    position: relative; 
+/* Estilo del contenedor del mapa */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;  /* Ajusta esto según el tamaño de tu mapa */
+  background-color: #f0f0f0;
 }
 
-.city-container {
+/* Imagen del mapa */
+.map-image {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  top: 315px;  /* Coordenada Y */
-  left: 235px; /* Coordenada X */
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0px;
+}
+
+/* Puntos de las ciudades */
+.city-point {
+  position: absolute;
+  width: 10px;  /* Tamaño del punto */
+  height: 10px;
+  background-color: red;  /* Color del punto */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.city-point:hover {
+  transform: scale(1.5);
+}
+
+/* Cuadro de información de la ciudad */
+.city-info {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  background-color: rgba(0, 0, 0, 0.7);
   color: white;
+  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 250px;
 }
 
-.city-name {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 8px;
+.city-info h2 {
+  margin-top: 0;
 }
 
-ul {
+.city-info ul {
   list-style: none;
   padding-left: 0;
 }
 
-ul li {
-  margin-bottom: 4px;
+.city-info button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.city-info button:hover {
+  background-color: #ff4500;
 }

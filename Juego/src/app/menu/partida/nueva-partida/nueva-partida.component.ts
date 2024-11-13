@@ -1,17 +1,25 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nueva-partida',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './nueva-partida.component.html',
   styleUrl: './nueva-partida.component.css'
 })
 export class NuevaPartidaComponent{
-city: any;
 
-  cities={
-    "cities": [
+  selectedCity: any = null; 
+  selectCity(city: any) {
+    this.selectedCity = city;
+  }
+
+  closeCityInfo() {
+    this.selectedCity = null;
+  }
+
+  cities=[
       {
         "name": "San Francisco",
         "region": 0,
@@ -1076,6 +1084,5 @@ city: any;
           "yellow": 0
         }
       }
-    ]
+    ];
   }
-}

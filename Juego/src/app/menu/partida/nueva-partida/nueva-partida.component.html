@@ -1,15 +1,25 @@
-<div class="general">
-    <button *NgIf="getCityByCoordinates()">
-        <h2>{{ city.name }}</h2>
-        <p><strong>Región:</strong> {{ city.region }}</p>
-        <p><strong>Conectado a:</strong> {{ city.connectedCities.join(', ') }}</p>
-        <p><strong>Centro de investigación:</strong> {{ city.researchCenter ? 'Sí' : 'No' }}</p>
-        <p><strong>Enfermedades:</strong></p>
-        <ul>
-          <li>Verde: {{ city.diseaseCount.green }}</li>
-          <li>Rojo: {{ city.diseaseCount.red }}</li>
-          <li>Azul: {{ city.diseaseCount.blue }}</li>
-          <li>Amarillo: {{ city.diseaseCount.yellow }}</li>
-        </ul>
-    </button>
-</div>
+
+<div class="map-container">
+    <img src="/images/fotoMapa.jpg" alt="Mapa" class="map-image">
+    <div
+      *ngFor="let city of cities"
+      class="city-point"
+      [style.top.px]="city.coordinates.y"
+      [style.left.px]="city.coordinates.x"
+      (click)="selectCity(city)"
+    ></div>
+    <div *ngIf="selectedCity" class="city-info">
+      <h2>{{ selectedCity.name }}</h2>
+      <p><strong>Región:</strong> {{ selectedCity.region }}</p>
+      <p><strong>Conectada a:</strong> {{ selectedCity.connectedCities.join(', ') }}</p>
+      <p><strong>Enfermedades:</strong></p>
+      <ul>
+        <li>Verde: {{ selectedCity.diseaseCount.green }}</li>
+        <li>Rojo: {{ selectedCity.diseaseCount.red }}</li>
+        <li>Azul: {{ selectedCity.diseaseCount.blue }}</li>
+        <li>Amarillo: {{ selectedCity.diseaseCount.yellow }}</li>
+      </ul>
+      <button (click)="closeCityInfo()">Cerrar</button>
+    </div>
+  </div>
+
