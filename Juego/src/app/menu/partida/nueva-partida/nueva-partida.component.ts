@@ -8,9 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './nueva-partida.component.css'
 })
 export class NuevaPartidaComponent{
-  getCityByCoordinates(x: number, y: number) {
-    return this.cities.cities.find(city => city.coordinates.x === x && city.coordinates.y === y);
-  }
+city: any;
 
   cities={
     "cities": [
