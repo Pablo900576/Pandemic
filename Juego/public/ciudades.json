@@ -1,5 +1,4 @@
-{
-  "cities": [
+[
     {
       "name": "San Francisco",
       "region": 0,
@@ -1065,4 +1064,3 @@
       }
     }
   ]
-}
