@@ -21,13 +21,13 @@ export class NuevaPartidaComponent{
     })
   }
 
-  selectedCiudad: any = null; 
+  ciudadSeleccionada: any = null; 
   selectCity(ciudad: any) {
-    this.selectedCiudad = ciudad;
+    this.ciudadSeleccionada = ciudad;
   }
 
   closeCityInfo() {
-    this.selectedCiudad = null;
+    this.ciudadSeleccionada = null;
   }
 
   }

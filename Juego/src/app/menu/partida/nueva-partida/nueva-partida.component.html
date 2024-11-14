@@ -1,25 +1,21 @@
-
 <div class="map-container">
+  <div class="map-inner">
     <img src="/images/fotoMapa2.jpg" alt="Mapa" class="map-image">
-    <div
-      *ngFor="let ciudad of ciudades"
-      class="city-point"
-      [style.top.px]="ciudad.coordinates.y"
-      [style.left.px]="ciudad.coordinates.x"
-      (click)="selectCity(ciudad)"
-    ></div>
-    <div *ngIf="selectedCiudad" class="city-info">
-      <h2>{{ selectedCiudad.name }}</h2>
-      <p><strong>Región:</strong> {{ selectedCiudad.region }}</p>
-      <p><strong>Conectada a:</strong> {{ selectedCiudad.connectedCities.join(', ') }}</p>
+    <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
+      [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
+    </div>
+    <div *ngIf="ciudadSeleccionada" class="city-info">
+      <h2>{{ ciudadSeleccionada.name }}</h2>
+      <p><strong>Región:</strong> {{ ciudadSeleccionada.region }}</p>
+      <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
       <p><strong>Enfermedades:</strong></p>
       <ul>
-        <li>Verde: {{ selectedCiudad.diseaseCount.green }}</li>
-        <li>Rojo: {{ selectedCiudad.diseaseCount.red }}</li>
-        <li>Azul: {{ selectedCiudad.diseaseCount.blue }}</li>
-        <li>Amarillo: {{ selectedCiudad.diseaseCount.yellow }}</li>
+        <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}</li>
+        <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}</li>
+        <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}</li>
+        <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}</li>
       </ul>
       <button (click)="closeCityInfo()">Cerrar</button>
     </div>
   </div>
-
+</div>
