@@ -15,7 +15,8 @@
         <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}</li>
         <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}</li>
       </ul>
-      <button (click)="closeCityInfo()">Cerrar</button>
+      <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
     </div>
+    <button class="button-salir" routerLink="../../">Salir</button>
   </div>
 </div>

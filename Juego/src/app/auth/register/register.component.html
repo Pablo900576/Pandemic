@@ -3,26 +3,26 @@
         <p class="title">Registro </p>
         <p class="message">Registrate ahora para tener acceso inmediato.</p>
         <div class="flex">
-            <label>
-                <input required="" placeholder="Nombre" type="text" class="input">
-            </label>
+            <div class="inputForm">
+                <input matInput formControlName="nombre" placeholder="Nombre" class="input" type="text">
+            </div>
 
-            <label>
-                <input required="" placeholder="Apellido" type="text" class="input">
-            </label>
+            <div class="inputForm">
+                <input matInput formControlName="apellido" placeholder="Apellido" class="input" type="text">
+            </div>
         </div>
 
-        <label>
-            <input required="" placeholder="Email" type="email" class="input">
-        </label>
+        <div class="inputForm">
+            <input matInput formControlName="email" placeholder="Email" class="input" type="text">
+        </div>
 
-        <label>
-            <input required="" placeholder="Contraseña" type="password" class="input">
-        </label>
-        <label>
-            <input required="" placeholder="Confirma contraseña" type="password" class="input">
-        </label>
-        <button class="submit" routerLink="">Registro</button>
+        <div class="inputForm">
+            <input matInput formControlName="contraseña" placeholder="Contraseña" class="input" type="password">
+        </div>
+        <div class="inputForm">
+            <input matInput formControlName="contraseña" placeholder="Confirmar contraseña" class="input" type="password">
+        </div>
+        <button class="button-submit" routerLink="">Registro</button>
         <p class="signin">Ya tienes una cuenta? <span routerLink="">Inicia Sesion</span></p>
     </form>
 </div>

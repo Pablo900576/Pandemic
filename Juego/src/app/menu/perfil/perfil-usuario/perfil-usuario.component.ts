@@ -1,10 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-usuario',
   standalone: true,
-  imports: [RouterLink],
+  imports: [CommonModule],
   templateUrl: './perfil-usuario.component.html',
   styleUrl: './perfil-usuario.component.css'
 })
