@@ -14,15 +14,17 @@
 .form {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 10%;
     gap: 10px;
-    padding: 30px;
-    width: 450px;
+    height: auto;
+    width: 50vh;
     background-color: rgba(255, 255, 255, 0.795);
+    padding: 20px;
+    padding-right: 35px;
     border-radius: 20px;
+    margin: 1.5vw;
+    position: relative;
     font-family: 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
-}
+  }
 
 .inputForm {
     height: 50px;
