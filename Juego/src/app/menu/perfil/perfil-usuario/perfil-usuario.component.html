@@ -1,23 +1,26 @@
 <body>
-    <div class="general">
-        <div class="cabecera">
-            <p>Nombre</p>
-            <img class="imagenPerfil" src="/images/fotoPerfil.png">
-            <div class="informacion">Sobre ti:</div>
-            <div class="ubicacion">Ubicacion:</div>
+    <div class="profile-card">
+        <div class="profile-header">
+          <img [src]="user.avatar" alt="User Avatar" class="avatar" />
+          <div class="user-info">
+            <h2>{{ user.username }}</h2>
+            <p>Nivel: {{ user.level }}</p>
+            <p class="bio">{{ user.bio }}</p>
+          </div>
         </div>
-        <div class="numeros">
-            <div class="seguidores">Seguidores:</div>
-            <div class="seguidos">Seguidos:</div>
-            <div class="post">Publicaciones:</div>
+      
+        <div class="profile-body">
+          <h3>Logros</h3>
+          <ul>
+            <li *ngFor="let achievement of user.achievements">
+              <strong>{{ achievement.name }}</strong>: {{ achievement.description }}
+            </li>
+          </ul>
+      
+          <h3>Amigos</h3>
+          <ul>
+            <li *ngFor="let friend of user.friends">{{ friend }}</li>
+          </ul>
         </div>
-        <div class="redes">
-            <button class="facebook"></button>
-            <button class="twitter"></button>
-            <button class="instagram"></button>
-            <button class="youtube"></button>
-            <button class="gitHub"></button>
-        </div>
-    </div>
-    </body>
-    
+      </div>
+</body>
