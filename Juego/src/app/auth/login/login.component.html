@@ -33,7 +33,7 @@
             </div>
             <span class="span">Olvidaste la contraseña?</span>
         </div>
-        <button formControlName="boton" class="button-submit" type="submit" routerLink="menu" [disabled]="miFormulario.invalid"
+        <button formControlName="boton" class="button-submit" type="submit" [disabled]="miFormulario.invalid"
         >Inicia Sesión</button>
         <small *ngIf="miFormulario.invalid && miFormulario.get('boton')?.touched" class="error-message">
             No se puede acceder, compruebe sus credenciales.

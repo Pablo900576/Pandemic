@@ -1,22 +1,29 @@
-<div class="map-container">
-  <div class="map-inner">
-    <img src="/images/fotoMapa2.jpg" alt="Mapa" class="map-image">
-    <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
-      [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
-    </div>
-    <div *ngIf="ciudadSeleccionada" class="city-info">
-      <h2>{{ ciudadSeleccionada.name }}</h2>
-      <p><strong>Región:</strong> {{ ciudadSeleccionada.region }}</p>
-      <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
-      <p><strong>Enfermedades:</strong></p>
-      <ul>
-        <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}</li>
-        <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}</li>
-        <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}</li>
-        <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}</li>
-      </ul>
-      <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
-    </div>
-    <button class="button-salir" routerLink="../../">Salir</button>
+<div class="general">
+  <div class="mapaCiudades" [style.transform]="zoomTransform">
+      <img src="/images/fotoMapa2.jpg" alt="Mapa" class="map-image">
+      <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
+        [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
+      </div>
   </div>
+  <div *ngIf="ciudadSeleccionada" class="city-info">
+    <h2>{{ ciudadSeleccionada.name }}</h2>
+    <p><strong>Región:</strong> {{ ciudadSeleccionada.region }}</p>
+    <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
+    <p><strong>Enfermedades:</strong></p>
+    <ul>
+      <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}</li>
+      <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}</li>
+      <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}</li>
+      <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}</li>
+    </ul>
+    <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
+  </div>
+  <div class="controls">
+    <button (click)="zoomIn()">+</button>
+    <button (click)="zoomOut()">-</button>
+  </div>
+  <button class="button-salir" routerLink="../../">Salir</button>
+
 </div>
+
+

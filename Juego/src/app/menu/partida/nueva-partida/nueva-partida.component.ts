@@ -31,4 +31,24 @@ export class NuevaPartidaComponent{
     this.ciudadSeleccionada = null;
   }
 
+  zoomLevel: number = 1; // Nivel inicial de zoom
+  maxZoom: number = 3; // Nivel máximo
+  minZoom: number = 0.5; // Nivel mínimo
+
+  zoomIn() {
+    if (this.zoomLevel < this.maxZoom) {
+      this.zoomLevel += 0.1;
+    }
+  }
+
+  zoomOut() {
+    if (this.zoomLevel > this.minZoom) {
+      this.zoomLevel -= 0.1;
+    }
+  }
+
+  get zoomTransform(): string {
+    return `scale(${this.zoomLevel})`;
+  }
+
   }
