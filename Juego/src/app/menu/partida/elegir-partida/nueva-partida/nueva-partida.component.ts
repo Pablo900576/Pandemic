@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CargarCiudadesService } from '../../../services/cargar-ciudades.service';
-import { Ciudad } from '../../../models/ciudades.model';
+import { CargarCiudadesService } from '../../../../services/cargar-ciudades.service';
+import { Ciudad } from '../../../../models/ciudades.model';
 import { RouterLink } from '@angular/router';
 
 @Component({
