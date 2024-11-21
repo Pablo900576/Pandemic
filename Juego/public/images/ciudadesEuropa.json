@@ -1,0 +1,852 @@
+[
+    {
+      "name": "Madrid",
+      "region": 0,
+      "coordinates": {
+        "x": 230,
+        "y": 325
+      },
+      "connectedCities": [
+        "Chicago",
+        "Los Angeles",
+        "Manila",
+        "Tokio"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Barcelona",
+      "region": 0,
+      "coordinates": {
+        "x": 320,
+        "y": 320
+      },
+      "connectedCities": [
+        "San Francisco",
+        "Montreal",
+        "Atlanta",
+        "Mexico DF",
+        "Los Angeles"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Lisboa",
+      "region": 0,
+      "coordinates": {
+        "x": 330,
+        "y": 360
+      },
+      "connectedCities": [
+        "Chicago",
+        "Miami",
+        "Washington"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Oporto",
+      "region": 0,
+      "coordinates": {
+        "x": 380,
+        "y": 295
+      },
+      "connectedCities": [
+        "Chicago",
+        "Nueva York",
+        "Washington"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Paris",
+      "region": 0,
+      "coordinates": {
+        "x": 380,
+        "y": 325
+      },
+      "connectedCities": [
+        "Montreal",
+        "Washington",
+        "Londres",
+        "Madrid"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Bruselas",
+      "region": 0,
+      "coordinates": {
+        "x": 360,
+        "y": 345
+      },
+      "connectedCities": [
+        "Montreal",
+        "Nueva York",
+        "Atlanta",
+        "Miami"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Zurich",
+      "region": 0,
+      "coordinates": {
+        "x": 610,
+        "y": 285
+      },
+      "connectedCities": [
+        "Nueva York",
+        "Madrid",
+        "Paris",
+        "Essen"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Milan",
+      "region": 0,
+      "coordinates": {
+        "x": 600,
+        "y": 335
+      },
+      "connectedCities": [
+        "Nueva York",
+        "Londres",
+        "Paris",
+        "Sao Paulo",
+        "Argel"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Roma",
+      "region": 0,
+      "coordinates": {
+        "x": 610,
+        "y": 315
+      },
+      "connectedCities": [
+        "Madrid",
+        "Londres",
+        "Essen",
+        "Argel",
+        "Milan"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Palermo",
+      "region": 0,
+      "coordinates": {
+        "x": 635,
+        "y": 285
+      },
+      "connectedCities": [
+        "Londres",
+        "Paris",
+        "San Petersburgo",
+        "Milan"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Munich",
+      "region": 0,
+      "coordinates": {
+        "x": 645,
+        "y": 325
+      },
+      "connectedCities": [
+        "Essen",
+        "Paris",
+        "Estambul"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Berlin",
+      "region": 0,
+      "coordinates": {
+        "x": 715,
+        "y": 245
+      },
+      "connectedCities": [
+        "Essen",
+        "Estambul",
+        "Moscu"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Amnterdam",
+      "region": 0,
+      "coordinates": {
+        "x": 235,
+        "y": 355
+      },
+      "connectedCities": [
+        "San Francisco",
+        "Mexico DF",
+        "Chicago",
+        "Sidney"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Londres",
+      "region": 0,
+      "coordinates": {
+        "x": 350,
+        "y": 385
+      },
+      "connectedCities": [
+        "Washington",
+        "Atlanta",
+        "Mexico DF",
+        "Bogota"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Praga",
+      "region": 1,
+      "coordinates": {
+        "x": 290,
+        "y": 415
+      },
+      "connectedCities": [
+        "Los Angeles",
+        "Miami",
+        "Chicago",
+        "Bogota",
+        "Lima"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Viena",
+      "region": 1,
+      "coordinates": {
+        "x": 380,
+        "y": 470
+      },
+      "connectedCities": [
+        "Miami",
+        "Mexico DF",
+        "Lima",
+        "Sao Paulo",
+        "Buenos Aires"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Zagreb",
+      "region": 1,
+      "coordinates": {
+        "x": 365,
+        "y": 500
+      },
+      "connectedCities": [
+        "Mexico DF",
+        "Bogota",
+        "Santiago de Chile"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Budapest",
+      "region": 1,
+      "coordinates": {
+        "x": 390,
+        "y": 580
+      },
+      "connectedCities": [
+        "Lima"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Belgrado",
+      "region": 1,
+      "coordinates": {
+        "x": 420,
+        "y": 600
+      },
+      "connectedCities": [
+        "Sao Paulo",
+        "Bogota"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Tirana",
+      "region": 1,
+      "coordinates": {
+        "x": 430,
+        "y": 530
+      },
+      "connectedCities": [
+        "Bogota",
+        "Buenos Aires",
+        "Lagos",
+        "Madrid"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Atenas",
+      "region": 1,
+      "coordinates": {
+        "x": 580,
+        "y": 460
+      },
+      "connectedCities": [
+        "Sao Paulo",
+        "Kinsasa",
+        "Jartum"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Sofia",
+      "region": 1,
+      "coordinates": {
+        "x": 675,
+        "y": 500
+      },
+      "connectedCities": [
+        "Lagos",
+        "Jartum",
+        "Johannesburgo"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Bucarest",
+      "region": 2,
+      "coordinates": {
+        "x": 700,
+        "y": 420
+      },
+      "connectedCities": [
+        "El Cairo",
+        "Lagos",
+        "Kinsasa",
+        "Johannesburgo"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Kiev",
+      "region": 2,
+      "coordinates": {
+        "x": 675,
+        "y": 570
+      },
+      "connectedCities": [
+        "Kinsasa",
+        "Jartum"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Oslo",
+      "region": 2,
+      "coordinates": {
+        "x": 620,
+        "y": 360
+      },
+      "connectedCities": [
+        "Madrid",
+        "Paris",
+        "Estambul",
+        "El Cairo"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Estambul",
+      "region": 2,
+      "coordinates": {
+        "x": 700,
+        "y": 385
+      },
+      "connectedCities": [
+        "Argel",
+        "Estambul",
+        "Bagdad"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Varsovia",
+      "region": 1,
+      "coordinates": {
+        "x": 745,
+        "y": 395
+      },
+      "connectedCities": [
+        "El Cairo",
+        "Bagdad",
+        "Karachi"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Minsk",
+      "region": 2,
+      "coordinates": {
+        "x": 695,
+        "y": 340
+      },
+      "connectedCities": [
+        "Argel",
+        "El Cairo",
+        "Bagdad",
+        "Moscu"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "San Petersburgo",
+      "region": 2,
+      "coordinates": {
+        "x": 750,
+        "y": 360
+      },
+      "connectedCities": [
+        "Estambul",
+        "Karachi",
+        "Riad",
+        "El Cairo"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Moscu",
+      "region": 2,
+      "coordinates": {
+        "x": 790,
+        "y": 260
+      },
+      "connectedCities": [
+        "Teheran",
+        "Estambul",
+        "San Petersburgo"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Riga",
+      "region": 2,
+      "coordinates": {
+        "x": 785,
+        "y": 350
+      },
+      "connectedCities": [
+        "Moscu",
+        "Bagdad",
+        "Karachi",
+        "Nueva Delhi"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Copenhague",
+      "region": 3,
+      "coordinates": {
+        "x": 820,
+        "y": 395
+      },
+      "connectedCities": [
+        "Teheran",
+        "Bagdad",
+        "Nueva Delhi",
+        "Riad",
+        "Bombay"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Vilna",
+      "region": 2,
+      "coordinates": {
+        "x": 845,
+        "y": 425
+      },
+      "connectedCities": [
+        "Karachi",
+        "Nueva Delhi",
+        "Madras"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Helsinki",
+      "region": 3,
+      "coordinates": {
+        "x": 850,
+        "y": 380
+      },
+      "connectedCities": [
+        "Teheran",
+        "Karachi",
+        "Bombay",
+        "Madras",
+        "Calcuta"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Estocolmo",
+      "region": 3,
+      "coordinates": {
+        "x": 880,
+        "y": 400
+      },
+      "connectedCities": [
+        "Nueva Delhi",
+        "Hong Kong",
+        "Madras",
+        "Bangkok"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Inari",
+      "region": 3,
+      "coordinates": {
+        "x": 855,
+        "y": 445
+      },
+      "connectedCities": [
+        "Bombay",
+        "Nueva Delhi",
+        "Calcula",
+        "Bangkok",
+        "Yakarta"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Reikiavik",
+      "region": 3,
+      "coordinates": {
+        "x": 930,
+        "y": 495
+      },
+      "connectedCities": [
+        "Madras",
+        "Bangkok",
+        "Ho Chi Minh",
+        "Sidney"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Dublin",
+      "region": 0,
+      "coordinates": {
+        "x": 920,
+        "y": 435
+      },
+      "connectedCities": [
+        "Yakarta",
+        "Calcuta",
+        "Madras",
+        "Ho Chi Minh",
+        "Hong Kong"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    },
+    {
+      "name": "Esmirna",
+      "region": 2,
+      "coordinates": {
+        "x": 965,
+        "y": 405
+      },
+      "connectedCities": [
+        "Bangkok",
+        "Ho Chi Minh",
+        "Taipei",
+        "Manila",
+        "Shanghai"
+      ],
+      "characters": [],
+      "researchCenter": false,
+      "diseaseCount": {
+        "green": 0,
+        "red": 0,
+        "blue": 0,
+        "yellow": 0
+      }
+    }
+]
