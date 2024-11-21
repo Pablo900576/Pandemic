@@ -3,8 +3,8 @@
       "name": "Madrid",
       "region": 0,
       "coordinates": {
-        "x": 230,
-        "y": 325
+        "x": 215,
+        "y": 505
       },
       "connectedCities": [
         "Chicago",
@@ -25,8 +25,8 @@
       "name": "Barcelona",
       "region": 0,
       "coordinates": {
-        "x": 320,
-        "y": 320
+        "x": 255,
+        "y": 485
       },
       "connectedCities": [
         "San Francisco",
@@ -48,8 +48,8 @@
       "name": "Lisboa",
       "region": 0,
       "coordinates": {
-        "x": 330,
-        "y": 360
+        "x": 180,
+        "y": 525
       },
       "connectedCities": [
         "Chicago",
@@ -69,8 +69,8 @@
       "name": "Oporto",
       "region": 0,
       "coordinates": {
-        "x": 380,
-        "y": 295
+        "x": 180,
+        "y": 500
       },
       "connectedCities": [
         "Chicago",
@@ -90,8 +90,8 @@
       "name": "Paris",
       "region": 0,
       "coordinates": {
-        "x": 380,
-        "y": 325
+        "x": 255,
+        "y": 420
       },
       "connectedCities": [
         "Montreal",
@@ -112,8 +112,8 @@
       "name": "Bruselas",
       "region": 0,
       "coordinates": {
-        "x": 360,
-        "y": 345
+        "x": 280,
+        "y": 390
       },
       "connectedCities": [
         "Montreal",
@@ -134,8 +134,8 @@
       "name": "Zurich",
       "region": 0,
       "coordinates": {
-        "x": 610,
-        "y": 285
+        "x":310,
+        "y": 430
       },
       "connectedCities": [
         "Nueva York",
@@ -156,8 +156,8 @@
       "name": "Milan",
       "region": 0,
       "coordinates": {
-        "x": 600,
-        "y": 335
+        "x":325,
+        "y": 450
       },
       "connectedCities": [
         "Nueva York",
@@ -179,8 +179,8 @@
       "name": "Roma",
       "region": 0,
       "coordinates": {
-        "x": 610,
-        "y": 315
+        "x":365,
+        "y": 500
       },
       "connectedCities": [
         "Madrid",
@@ -202,8 +202,8 @@
       "name": "Palermo",
       "region": 0,
       "coordinates": {
-        "x": 635,
-        "y": 285
+        "x":350,
+        "y": 530
       },
       "connectedCities": [
         "Londres",
@@ -224,8 +224,8 @@
       "name": "Munich",
       "region": 0,
       "coordinates": {
-        "x": 645,
-        "y": 325
+        "x": 330,
+        "y": 405
       },
       "connectedCities": [
         "Essen",
@@ -245,8 +245,8 @@
       "name": "Berlin",
       "region": 0,
       "coordinates": {
-        "x": 715,
-        "y": 245
+        "x": 320,
+        "y": 365
       },
       "connectedCities": [
         "Essen",
@@ -263,7 +263,7 @@
       }
     },
     {
-      "name": "Amnterdam",
+      "name": "Amsterdam",
       "region": 0,
       "coordinates": {
         "x": 235,

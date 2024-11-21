@@ -1,3 +1,106 @@
-.general{
-    background-image: url(/images/fotoMapaEuropa.jpg);
-}
+.general {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh; 
+    margin: 0;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+  }
+  
+  .mapaCiudades {
+  
+    position: absolute;
+    
+    transition: transform 0.3s ease; 
+    cursor: grab;
+  }
+  
+  
+  .controls {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    display: flex;
+    gap: 10px;
+  }
+  
+  #botonZoomIn{
+    height: 25px;
+    width: 35px;
+    cursor: zoom-in;
+  }
+  
+  #botonZoomOut{
+    width: 35px;
+    cursor: zoom-out;
+  }
+  
+  .city-point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+  
+  .city-info {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    width: 300px;
+  }
+  .city-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin-bottom: 4px;
+  }
+  
+  .button-cerrar{
+    width: 60px;
+    height: 30px;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 2px;
+  }
+  
+  .button-salir{
+    width: 60px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    left: 10vh;
+    border: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 2px;
+  }

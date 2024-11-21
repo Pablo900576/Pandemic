@@ -8,10 +8,14 @@ import { Observable } from 'rxjs';
 export class CargarCiudadesService {
 
   private jsonURL="/ciudades.json";
-
+  private jsonURLEuropa="/ciudadesEuropa.json";
   constructor(private http: HttpClient) { }
 
-  getCiudades(): Observable<any>{
+  getCiudadesMundo(): Observable<any>{
     return this.http.get<any>(this.jsonURL);
+  }
+  getCiudadesEuropa(): Observable<any>{
+    return this.http.get<any>(this.jsonURLEuropa);
+    
   }
 }

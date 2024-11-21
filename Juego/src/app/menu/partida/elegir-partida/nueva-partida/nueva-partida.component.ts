@@ -17,7 +17,7 @@ export class NuevaPartidaComponent{
   constructor(private cargarCiudad: CargarCiudadesService){}
 
   ngOnInit(){
-    this.cargarCiudad.getCiudades().subscribe(response =>{
+    this.cargarCiudad.getCiudadesMundo().subscribe(response =>{
       this.ciudades = response
     })
   }
