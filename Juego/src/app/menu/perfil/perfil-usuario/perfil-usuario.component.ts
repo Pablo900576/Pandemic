@@ -10,14 +10,17 @@ import { Component } from '@angular/core';
 })
 export class PerfilUsuarioComponent {
   user = {
-    username: 'Gamer123',
-    level: 25,
-    avatar: 'https://via.placeholder.com/150', // Puedes usar una URL de avatar
+    username: 'Jugador',
+    avatar: 'https://th.bing.com/th/id/OIP.nkHYQR6Y2L-8VNEsG-S6FwHaHa?rs=1&pid=ImgDetMain',
+    level: 5,
+    levelProgress: 75,
     achievements: [
-      { name: 'First Blood', description: 'Ganaste tu primera partida' },
-      { name: 'Sharpshooter', description: 'Alcanzaste un 80% de precisión' },
+      { name: 'Maestro del Combate' },
+      { name: 'Explorador Legendario' }
     ],
-    friends: ['PlayerOne', 'DragonSlayer', 'AceHunter'],
-    bio: '¡Amante de los juegos de aventuras y RPG!',
+    friends: [
+      { name: 'Guerrero Azul' },
+      { name: 'Mago Estelar' }
+    ]
   };
 }
