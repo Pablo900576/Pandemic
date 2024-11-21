@@ -31,9 +31,14 @@ export class NuevaPartidaComponent{
     this.ciudadSeleccionada = null;
   }
 
-  zoomLevel: number = 1; // Nivel inicial de zoom
-  maxZoom: number = 3; // Nivel máximo
-  minZoom: number = 0.5; // Nivel mínimo
+  zoomLevel: number = 1;
+  maxZoom: number = 3; 
+  minZoom: number = 0.5;
+  translateX: number = 0;
+  translateY: number = 0;
+  isDragging: boolean = false;
+  startX: number = 0;
+  startY: number = 0;
 
   zoomIn() {
     if (this.zoomLevel < this.maxZoom) {
@@ -48,7 +53,27 @@ export class NuevaPartidaComponent{
   }
 
   get zoomTransform(): string {
-    return `scale(${this.zoomLevel})`;
+    return `scale(${this.zoomLevel}) translate(${this.translateX}px, ${this.translateY}px)`;
   }
 
+  onMouseDown(event: MouseEvent) {
+    this.isDragging = true;
+
+    this.startX = event.clientX - this.translateX; 
+    this.startY = event.clientY - this.translateY; 
+  
+}
+  
+  onMouseMove(event: MouseEvent) {
+    if (this.isDragging) { 
+      this.translateX = event.clientX - this.startX;
+      this.translateY = event.clientY - this.startY;
+    }
   }
+  
+  async onMouseUp() {
+    this.isDragging = false; 
+  }
+
+
+}
