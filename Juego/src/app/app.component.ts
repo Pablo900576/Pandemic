@@ -6,7 +6,7 @@ import { NuevaPartida2Component } from "./menu/partida/elegir-partida/nueva-part
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NuevaPartida2Component, NuevaPartida2Component],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

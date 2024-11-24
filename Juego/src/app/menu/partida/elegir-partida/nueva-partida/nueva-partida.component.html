@@ -3,7 +3,7 @@
   (mousemove)="onMouseMove($event)"
   (mouseup)="onMouseUp()"
 >
-      <img src="/images/fotoMapa2.jpg" alt="Mapa" class="map-image" draggable="false">
+      <img src="/images/fotoMapa.jpg" alt="Mapa" class="map-image" draggable="false">
       <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
         [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
       </div>
@@ -25,7 +25,7 @@
     <button (click)="zoomIn()" id="botonZoomIn">+</button>
     <button (click)="zoomOut()" id="botonZoomOut">-</button>
   </div>
-  <button class="button-salir" routerLink="../../">Salir</button>
+  <button class="button-salir" routerLink="../../../">Salir</button>
 </div>
 
 

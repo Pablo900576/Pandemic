@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CargarCiudadesService } from '../../../../services/cargar-ciudades.service';
 import { Ciudad } from '../../../../models/ciudades.model';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nueva-partida2',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './nueva-partida2.component.html',
   styleUrl: './nueva-partida2.component.css'
 })
