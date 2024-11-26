@@ -1,13 +1,24 @@
 <?php
 
-$nombre = filter_input(INPUT_POST, 'nombre', FILTER_SANITIZE_STRING);
-$pw = filter_input(INPUT_POST, 'pw', FILTER_SANITIZE_STRING);
+header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Headers:*');
+header('Content-Type: aplication/json');
+
+
+$json= file_get_contents('php://input');
+
+$usuarioo=json_decode($json);
+
+$nombre = $usuarioo->nombre;
+$pw = $usuarioo->contraseña;
+
+
 
 
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'prueba3';
+$dbname = 'pandemic';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -30,8 +41,10 @@ $resultado = $comprobarUsuario->get_result();
 
 if ($resultado->num_rows == 1) {
     $usuario = $resultado->fetch_assoc();
+    var_dump($usuario);
+
     if (password_verify($pw, $usuario['password'])) {
-        echo json_encode(["status" => "success", "message" => "Se logueó correctamente a: '$nombre'"]);
+        echo json_encode(["status" => "success", "message" => "Se logueó correctamente a: $nombre"]);
     } else {
         echo json_encode(["status" => "error", "message" => "Contraseña incorrecta"]);
     }
