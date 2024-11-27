@@ -38,7 +38,7 @@ export class RegisterComponent {
       };
       this.authService.register(usuario).subscribe(
         response=> {
-          console.log("Usuario logeadooooooooooooooooo.")
+          console.log("Usuario registradooooooooooo.")
         }
       );
 
