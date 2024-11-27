@@ -4,15 +4,12 @@ header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Headers:*');
 header('Content-Type: aplication/json');
 
-
 $json= file_get_contents('php://input');
 
-$usuarioo=json_decode($json);
+$usuario=json_decode($json);
 
-$email = $usuarioo->email;
-$pw = $usuarioo->password;
-
-
+$email = $usuario->email;
+$pw = $usuario->pw;
 
 $servername = 'localhost';
 $username = 'root';
@@ -39,10 +36,10 @@ $comprobarUsuario->execute();
 $resultado = $comprobarUsuario->get_result();
 
 if ($resultado->num_rows == 1) {
-    $usuario = $resultado->fetch_assoc();
-    var_dump($usuario);
-
-    if (password_verify($pw, $usuario['password'])) {
+    $usuarioo = $resultado->fetch_assoc();
+    $pw2= $usuarioo['password'];
+    if (password_verify($pw,$pw2)) {
+        
         echo json_encode(["status" => "success", "message" => "Se logueó correctamente a: $email"]);
     } else {
         echo json_encode(["status" => "error", "message" => "Contraseña incorrecta"]);

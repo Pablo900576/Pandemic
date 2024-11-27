@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 import { AuthService } from "../../services/auth.service";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
 import {  Usuario } from "../../models/usuarios.model";
@@ -15,15 +15,15 @@ import {  Usuario } from "../../models/usuarios.model";
 })
 
 export class RegisterComponent {
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
   mostrarError = false;
 
   miFormulario = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.maxLength(50)]),
     apellido: new FormControl('', [Validators.required, Validators.maxLength(50)]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    contraseña: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
-    contraseña2: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
+    contraseña: new FormControl('', [Validators.required]),
+    contraseña2: new FormControl('', [Validators.required]),
     boton: new FormControl('')
     
   });
@@ -32,13 +32,18 @@ export class RegisterComponent {
     if (this.miFormulario.valid) {
       const usuario: Usuario = {
         email: this.miFormulario.value.email,
-        password: this.miFormulario.value.contraseña,
+        pw: this.miFormulario.value.contraseña,
         apellido: this.miFormulario.value.apellido,
         nombre: this.miFormulario.value.nombre
       };
       this.authService.register(usuario).subscribe(
         response=> {
-          console.log("Usuario registradooooooooooo.")
+          if(response.status== 'success'){
+            console.log("Usuario registrado.");
+            this.router.navigate(['']);
+          }else{
+            alert('No se ha podido registrar');
+          }
         }
       );
 

@@ -19,7 +19,7 @@ export class LoginComponent {
 
   miFormulario = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    contraseña: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(10)]),
+    contraseña: new FormControl('', [Validators.required]),
     boton: new FormControl('')
   });
 
@@ -27,11 +27,18 @@ export class LoginComponent {
     if (this.miFormulario.valid) {
       const usuario: Usuario = {
         email: this.miFormulario.value.email,
-        password: this.miFormulario.value.contraseña
+        pw: this.miFormulario.value.contraseña
       };
       this.authService.login(usuario).subscribe(
         response=> {
-          console.log("Usuario logeadooooooooooooooooo.")
+          if(response.status=='success'){
+            console.log("Usuario logeado.")
+            this.router.navigate(['/menu'])
+          }else{
+            alert('Usuario o contraseña incorrecta.')
+            console.log(response.message);
+          }
+          
         }
       );
 

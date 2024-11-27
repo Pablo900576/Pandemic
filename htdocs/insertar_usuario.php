@@ -11,10 +11,11 @@ $usuario=json_decode($json);
 
 
 $nombre = $usuario->nombre;
-$pw = $usuario->password;
+$pw = $usuario->pw;
 $email = $usuario->email;
 $apellido=$usuario->apellido;
-$hash= password_hash($pw, PASSWORD_DEFAULT);
+
+$hash= password_hash($pw, PASSWORD_BCRYPT);
 
 $servername = 'localhost';
 $username = 'root';
@@ -35,7 +36,7 @@ if (!$insertarUsuario) {
     $conn->close();
 }
 
-$insertarUsuario-> bind_param("ssss", $email, $nombre, $hash,$apellido);
+$insertarUsuario-> bind_param("ssss", $email, $nombre, $hash, $apellido);
 
 $resultado = $insertarUsuario->execute();
 
