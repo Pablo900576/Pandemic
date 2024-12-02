@@ -27,19 +27,19 @@ export class LoginComponent {
     if (this.miFormulario.valid) {
       const usuario: Usuario = {
         email: this.miFormulario.value.email,
-        pw: this.miFormulario.value.contraseña
+        pw: this.miFormulario.value.contraseña,
+
       };
       this.authService.login(usuario).subscribe(
         response=> {
-          if(response.status=='success'){
-            console.log("Usuario logeado.")
-            this.router.navigate(['/menu'])
-          }else{
-            alert('Usuario o contraseña incorrecta.')
-            console.log(response.message);
+
+            console.log("Usuario logeado.");
+            this.router.navigate(['/menu']);
+            usuario.nombre= response.nombre;
+            console.log(usuario.nombre);
           }
           
-        }
+        
       );
 
       //this.router.navigate(['/menu'])

@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Usuario } from '../../../models/usuarios.model';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-perfil-usuario',
@@ -9,6 +11,8 @@ import { Component } from '@angular/core';
   styleUrl: './perfil-usuario.component.css'
 })
 export class PerfilUsuarioComponent {
+
+    
   user = {
     username: 'Jugador',
     avatar: 'https://th.bing.com/th/id/OIP.nkHYQR6Y2L-8VNEsG-S6FwHaHa?rs=1&pid=ImgDetMain',
