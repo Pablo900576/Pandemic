@@ -19,7 +19,4 @@ export class AuthService {
   register(register: Usuario):Observable<any>{
     return this.http.post(this.apiUrl+'insertar_usuario.php', JSON.stringify(register));
   }
-
-
-
 }

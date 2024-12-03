@@ -32,17 +32,12 @@ export class LoginComponent {
       };
       this.authService.login(usuario).subscribe(
         response=> {
-
             console.log("Usuario logeado.");
             this.router.navigate(['/menu']);
             usuario.nombre= response.nombre;
             console.log(usuario.nombre);
           }
-          
-        
       );
-
-      //this.router.navigate(['/menu'])
     } else {
       console.log('Error maquina.')
       this.miFormulario.markAllAsTouched();
