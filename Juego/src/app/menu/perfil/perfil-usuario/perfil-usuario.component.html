@@ -1,12 +1,12 @@
-<body>
-    <div class="game-profile">
+<body car>
+    <div class="game-profile" let >
         <div class="header">
-          <img [src]="user.avatar" alt="Avatar" class="avatar">
+          <img [src]="usuario.avatar" alt="Avatar" class="avatar">
           <div class="user-info">
-            <h2>{{ user.username }}</h2>
+            <h2>{{ usuario.nick }}</h2>
             <div class="level-bar">
-              <div class="level-fill" [style.width.%]="user.levelProgress"></div>
-              <span>Nivel {{ user.level }}</span>
+              <div class="level-fill" [style.width.%]="usuario.nivelProgress"></div>
+              <span>Nivel {{ usuario.nivel }}</span>
             </div>
           </div>
         </div>
@@ -15,7 +15,7 @@
           <div class="section achievements">
             <h3>Logros</h3>
             <ul>
-              <li *ngFor="let achievement of user.achievements">
+              <li *ngFor="let achievement of usuario.logros">
                 {{ achievement.name }}
               </li>
             </ul>
@@ -24,7 +24,7 @@
           <div class="section friends">
             <h3>Amigos</h3>
             <ul>
-              <li *ngFor="let friend of user.friends">
+              <li *ngFor="let friend of usuario.colegas">
                 {{ friend.name }}
               </li>
             </ul>

@@ -14,6 +14,7 @@ $nombre = $usuario->nombre;
 $pw = $usuario->pw;
 $email = $usuario->email;
 $apellido=$usuario->apellido;
+$nick= $usuario->nick;
 
 $hash= password_hash($pw, PASSWORD_BCRYPT);
 
@@ -29,19 +30,19 @@ if ($conn->connect_error) {
     
 }
 
-$insertarUsuario = $conn->prepare("INSERT INTO usuarios (email, nombre, password, apellido) values (?,?,?,?)");
+$insertarUsuario = $conn->prepare("INSERT INTO usuarios (email, nombre, password, apellido, nick) values (?,?,?,?,?)");
 
 if (!$insertarUsuario) {
     echo json_encode(["status" => "error", "message" => "Erorr con la consulta: " . $conn->error]);
     $conn->close();
 }
 
-$insertarUsuario-> bind_param("ssss", $email, $nombre, $hash, $apellido);
+$insertarUsuario-> bind_param("sssss", $email, $nombre, $hash, $apellido,$nick);
 
 $resultado = $insertarUsuario->execute();
 
 if ($resultado) {
-    echo json_encode(["status" => "success", "message" => "Se inserto correctamente a: $usuario->email"]);
+    echo json_encode(["status" => "success", "message" => "Se inserto correctamente a: $usuario->email", "nombre"=>"$nombre","nick"=>"$nick","email"=>"$email"]);
 } else {
     echo json_encode(["status" => "error", "message" => "No se logro registrar al usuario: $usuario->email"]);
 }

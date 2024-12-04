@@ -22,6 +22,7 @@ export class RegisterComponent {
     nombre: new FormControl('', [Validators.required, Validators.maxLength(50)]),
     apellido: new FormControl('', [Validators.required, Validators.maxLength(50)]),
     email: new FormControl('', [Validators.required, Validators.email]),
+    nick: new FormControl('', [Validators.required, Validators.maxLength(50)]),
     contraseña: new FormControl('', [Validators.required]),
     contraseña2: new FormControl('', [Validators.required]),
     boton: new FormControl('')
@@ -34,7 +35,8 @@ export class RegisterComponent {
         email: this.miFormulario.value.email,
         pw: this.miFormulario.value.contraseña,
         apellido: this.miFormulario.value.apellido,
-        nombre: this.miFormulario.value.nombre
+        nombre: this.miFormulario.value.nombre,
+        nick: this.miFormulario.value.nombre
       };
       this.authService.register(usuario).subscribe(
         response=> {

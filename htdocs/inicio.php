@@ -23,7 +23,7 @@ if ($conn->connect_error) {
     exit;
 }
 
-$comprobarUsuario = $conn->prepare("SELECT email, password, nombre FROM usuarios WHERE email = ?");
+$comprobarUsuario = $conn->prepare("SELECT email, password, nombre, nick FROM usuarios WHERE email = ?");
 
 if (!$comprobarUsuario) {
     echo json_encode(["status" => "error", "message" => "Error al preparar la consulta: " . $conn->error]);
@@ -38,10 +38,11 @@ $resultado = $comprobarUsuario->get_result();
 if ($resultado->num_rows == 1) {
     $usuarioo = $resultado->fetch_assoc();
     $nombre= $usuarioo['nombre'];
+    $nick= $usuarioo['nick'];
     $pw2= $usuarioo['password'];
     if (password_verify($pw,$pw2)) {
         
-        echo json_encode(["status" => "success", "message" => "Se logueó correctamente a: $email", "nombre"=>$nombre]);
+        echo json_encode(["status" => "success", "message" => "Se logueó correctamente a: $email", "nombre"=>"$nombre","nick"=>"$nick","email"=>"$email"]);
     } else {
         echo json_encode(["status" => "error", "message" => "Contraseña incorrecta", "nombre"=>$nombre]);
     }
