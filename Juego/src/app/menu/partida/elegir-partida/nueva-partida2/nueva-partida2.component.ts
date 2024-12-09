@@ -30,6 +30,7 @@ export class NuevaPartida2Component {
     this.ciudadSeleccionada = null;
   }
 
+  numeroRonda: number = 0;
   zoomLevel: number = 1;
   maxZoom: number = 3; 
   minZoom: number = 0.5;
@@ -38,6 +39,10 @@ export class NuevaPartida2Component {
   isDragging: boolean = false;
   startX: number = 0;
   startY: number = 0;
+
+  saltarRonda(){
+    this.numeroRonda++;
+  }
 
   zoomIn() {
     if (this.zoomLevel < this.maxZoom) {

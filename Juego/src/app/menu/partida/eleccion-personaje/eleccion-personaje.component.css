@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+
 }
 
 .title h3 {
@@ -56,4 +57,16 @@
 .personaje:hover img {
     transform: scale(1);
     object-fit: cover;
+}
+
+.nombres {
+    display: flex;
+    margin-top: 6vh;
+    margin-left: 6vh;
+    gap: 120px;
+}
+
+.nombres strong{
+    font-size: 3vh;
+    color: rgb(35, 35, 35);
 }
