@@ -1,9 +1,9 @@
-<body car>
-    <div class="game-profile" let >
+<body >
+    <div class="game-profile">
         <div class="header">
           <img [src]="usuario.avatar" alt="Avatar" class="avatar">
           <div class="user-info">
-            <h2>{{ usuario.nick }}</h2>
+            <h2>{{ usuario.nombre}}</h2>
             <div class="level-bar">
               <div class="level-fill" [style.width.%]="usuario.nivelProgress"></div>
               <span>Nivel {{ usuario.nivel }}</span>

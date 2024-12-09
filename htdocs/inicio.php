@@ -42,9 +42,9 @@ if ($resultado->num_rows == 1) {
     $pw2= $usuarioo['password'];
     if (password_verify($pw,$pw2)) {
         
-        echo json_encode(["status" => "success", "message" => "Se logueó correctamente a: $email", "nombre"=>"$nombre","nick"=>"$nick","email"=>"$email"]);
+        echo json_encode(["status" => "success", "message" => "Se logueó correctamente a: $email", "nombre"=>$nombre, "nick"=>$nick, "email"=>$email]);
     } else {
-        echo json_encode(["status" => "error", "message" => "Contraseña incorrecta", "nombre"=>$nombre]);
+        echo json_encode(["status" => "error", "message" => "Contraseña incorrecta", "nombre"=>$nombre, "nick"=>$nick, "email"=>$email]);
     }
 } elseif ($resultado->num_rows > 1) {
     echo json_encode(["status" => "error", "message" => "Hay varios usuarios con el mismo email"]);
