@@ -16,14 +16,15 @@
 .input {
     display: flex;
     flex-direction: column;
-    width: 35vh;
+    width: 70%;
+    max-width: 400px;
     background-color: #000000b3;
     justify-content: center;
     border-radius: 5px;
     gap: 5px;
-    padding: 25px;
+    padding: 20px;
     position: absolute;
-    top: 40%;
+    top: 40vh;
 }
 
 .tituloMenu{
@@ -44,34 +45,78 @@
     gap: 15px;
     cursor: pointer;
     border-radius: 4px;
-    padding-left: 20px;
-    margin: 2px;
+    padding: 8px 16px;
+    margin: 5px;
 } 
 
+
 .value img {
-    position: relative;
     height: 30px; 
+    width: 30px;
     object-fit: contain;
     filter: invert(1);
+    margin: 0;
 }
 
-#img1 {
-    width: 56px;
-    transform: scale(1); 
-}
-
-#img2 {
-    transform: scale(1.4); 
-}
-
-#img3 {
-    transform: scale(1);
-}
-
+#img2,
 #img4 {
-    transform: scale(1.4);
+    transform: scale(2);
+}
+
+#img3{
+    transform: scale(1.7);
 }
 
 .value:hover {
     background-color: #20262b;
+}
+
+@media (max-width: 668px ) {
+    .input {
+        width: 50%;
+        max-width: 90%;
+    }
+
+    .tituloMenu {
+        font-size: 1.8rem;
+    }
+
+    .value {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .value img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1000px) {
+    .input {
+        width: 50%;
+        max-width: 90%;
+        top: 30vh;
+        padding: 15px;
+    }
+
+    .botones{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        gap: 15px
+    }
+
+    .tituloMenu {
+        font-size: 1.8rem;
+    }
+
+    .value {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    .value img {
+        width: 25px;
+        height: 25px;
+    }
 }
