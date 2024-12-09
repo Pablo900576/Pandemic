@@ -1,54 +1,54 @@
 .general {
-    width: 100%;
-    min-height: 100vh;
-    height: auto;
-    background-image: url(/images/fondoCargarPartida.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-image: url(/images/fondoCargarPartida.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
-.titulo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 30vh;
-    left: 65vh;
-    height: 9vh;
-    width: 75vh;
-    color: rgb(230, 230, 230);
-    border-radius: 30px;
-    background-color: #3a3a3a95;
+.titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 30vh;
+  left: 65vh;
+  height: 9vh;
+  width: 75vh;
+  color: rgb(230, 230, 230);
+  border-radius: 30px;
+  background-color: #3a3a3a95;
 }
 
 .botones {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 50vh;
-    gap: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 50vh;
+  gap: 20vh;
 }
 
 .button {
-    border: none;
-    width: 30vh;
-    height: 10vh;
-    border-radius: 3em;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #292729;
-    cursor: pointer;
-    font-size: 2vh;
-  }
-  
-  .button:hover {
-    background: linear-gradient(#A47CF3,#683FEA);
-  }
-  
-  .button:hover {
-    color: white;
-    font-size: 2.5vh;
-  }
+  border: none;
+  width: 30vh;
+  height: 10vh;
+  border-radius: 3em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #292729;
+  cursor: pointer;
+  font-size: 2vh;
+}
+
+.button:hover {
+  background: linear-gradient(#A47CF3, #683FEA);
+}
+
+.button:hover {
+  color: white;
+  font-size: 2.5vh;
+}

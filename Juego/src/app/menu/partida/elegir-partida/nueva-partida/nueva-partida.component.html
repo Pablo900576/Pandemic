@@ -8,6 +8,13 @@
         [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
       </div>
   </div>
+  <div class="menu">
+    <div class="controls">
+      <button (click)="zoomIn()" id="botonZoomIn">+</button>
+      <button (click)="zoomOut()" id="botonZoomOut">-</button>
+    </div>
+    <button class="button-salir" routerLink="../../../">Salir</button>
+  </div>
   <div *ngIf="ciudadSeleccionada" class="city-info">
     <h2>{{ ciudadSeleccionada.name }}</h2>
     <p><strong>Región:</strong> {{ ciudadSeleccionada.region }}</p>
@@ -21,11 +28,6 @@
     </ul>
     <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
   </div>
-  <div class="controls">
-    <button (click)="zoomIn()" id="botonZoomIn">+</button>
-    <button (click)="zoomOut()" id="botonZoomOut">-</button>
-  </div>
-  <button class="button-salir" routerLink="../../../">Salir</button>
 </div>
 
 

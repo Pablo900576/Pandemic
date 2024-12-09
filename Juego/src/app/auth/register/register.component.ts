@@ -36,7 +36,7 @@ export class RegisterComponent {
         pw: this.miFormulario.value.contraseña,
         apellido: this.miFormulario.value.apellido,
         nombre: this.miFormulario.value.nombre,
-        nick: this.miFormulario.value.nombre
+        nick: this.miFormulario.value.nick
       };
       this.authService.register(usuario).subscribe(
         response=> {
