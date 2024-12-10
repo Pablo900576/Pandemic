@@ -7,9 +7,7 @@ import { Usuario } from '../models/usuarios.model';
 })
 export class PerfilService {
 
-    constructor() {
-
-    }
+    constructor() {}
     usuarioActual: Usuario={
       
     }; 
