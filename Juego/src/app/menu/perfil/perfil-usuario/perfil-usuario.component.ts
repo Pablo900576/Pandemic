@@ -1,14 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../../models/usuarios.model';
-import { AuthService } from '../../../services/auth.service';
 import { PerfilService } from '../../../services/perfil.service';
-import { Observable, share } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-perfil-usuario',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './perfil-usuario.component.html',
   styleUrl: './perfil-usuario.component.css'
 })

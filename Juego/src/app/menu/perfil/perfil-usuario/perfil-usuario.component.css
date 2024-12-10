@@ -39,8 +39,14 @@ body{
   
   .user-info h2 {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .user-info h4 {
+    font-size: 1rem;
     margin-bottom: 0.5rem;
+    color: rgb(158, 158, 158);
   }
   
   .level-bar {
