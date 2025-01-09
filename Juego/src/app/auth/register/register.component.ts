@@ -29,6 +29,10 @@ export class RegisterComponent {
     
   });
 
+  pwIguales(): boolean {
+    return this.miFormulario.get('contraseña')?.value === this.miFormulario.get('contraseña2')?.value;
+  }
+
   enviar() {
     if (this.miFormulario.valid) {
       if(this.miFormulario.value.contraseña==this.miFormulario.value.contraseña2){

@@ -26,9 +26,11 @@
         <div class="inputForm">
             <input matInput formControlName="contraseña2" placeholder="Confirmar contraseña" id="contraseña2" name="contraseña2" class="input" type="password">
         </div>
-        <div *ngIf="pwNoCoinciden && miFormulario.get('contraseña2')?.touched" >
-            <small style="color: red;">Las contraseñas no coinciden.</small>
-        </div>
+
+        <div *ngIf="!pwIguales() && miFormulario.get('contraseña2')?.touched" class="error">
+            Las contraseñas no coinciden
+          </div>
+
         <button class="button-submit" type="submit">Registro</button>
         <p class="signin">Ya tienes una cuenta? <span routerLink="">Inicia Sesion</span></p>
     </form>
