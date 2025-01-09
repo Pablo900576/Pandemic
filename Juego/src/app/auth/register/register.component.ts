@@ -16,7 +16,7 @@ import {  Usuario } from "../../models/usuarios.model";
 
 export class RegisterComponent {
   constructor(private authService: AuthService, private router: Router){}
-  mostrarError = false;
+  pwNoCoinciden = false;
 
   miFormulario = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.maxLength(50)]),
@@ -31,7 +31,9 @@ export class RegisterComponent {
 
   enviar() {
     if (this.miFormulario.valid) {
-      const usuario: Usuario = {
+      if(this.miFormulario.value.contraseña==this.miFormulario.value.contraseña2){
+        
+        const usuario: Usuario = {
         email: this.miFormulario.value.email,
         pw: this.miFormulario.value.contraseña,
         apellido: this.miFormulario.value.apellido,
@@ -41,6 +43,7 @@ export class RegisterComponent {
       this.authService.register(usuario).subscribe(
         response=> {
           if(response.status== 'success'){
+            console.log(response.hola);
             console.log("Usuario registrado.");
             this.router.navigate(['']);
           }else{
@@ -48,7 +51,9 @@ export class RegisterComponent {
           }
         }
       );
-
+    }else{
+      this.pwNoCoinciden=true;
+    }
     } else {
       console.log('Error maquina.')
       this.miFormulario.markAllAsTouched();
