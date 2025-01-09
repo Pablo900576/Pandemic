@@ -46,7 +46,7 @@ if($comprobarEmail->num_rows==0){
     $resultado = $insertarUsuario->execute();
 
     if ($resultado) {
-        echo json_encode(["status" => "success", "message" => "Se inserto correctamente a: $email", "nombre"=>"$nombre","nick"=>"$nick","email"=>"$email", "hola"=>"$comprobarEmail"]);
+        echo json_encode(["status" => "success", "message" => "Se inserto correctamente a: $email"]);
     } else {
         echo json_encode(["status" => "error", "message" => "No se logro registrar al usuario: $email"]);
     }    

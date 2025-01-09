@@ -46,9 +46,11 @@ export class RegisterComponent {
         response=> {
           if(response.status== 'success'){
             console.log("Usuario registrado.");
+            console.log(response.message)
             this.router.navigate(['']);
           }else{
             alert('No se ha podido registrar');
+            console.log(response.message)
           }
         }
       );

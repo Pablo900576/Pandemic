@@ -1,13 +1,27 @@
 <div class="general">
-  <div class="mapaCiudades" [style.transform]="zoomTransform"  (mousedown)="onMouseDown($event)"
+  <div class="mapaCiudades" [style.transform]="zoomTransform" (mousedown)="onMouseDown($event)"
   (mousemove)="onMouseMove($event)"
-  (mouseup)="onMouseUp()"
->
-      <img src="/images/fotoMapa.jpg" alt="Mapa" class="map-image" draggable="false">
-      <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
-        [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
-      </div>
+  (mouseup)="onMouseUp()">
+  <svg class="city-lines" xmlns="http://www.w3.org/2000/svg">
+    <ng-container *ngFor="let ciudad of ciudades; let i = index">
+      <ng-container *ngFor="let destino of ciudad.connectedCities">
+        <line *ngIf="!isConnectionRendered(ciudad.name, destino)"
+              [attr.x1]="ciudad.coordinates.x"
+              [attr.y1]="ciudad.coordinates.y"
+              [attr.x2]="getCityCoordinates(destino)?.x"
+              [attr.y2]="getCityCoordinates(destino)?.y"
+              stroke="blue"
+              stroke-width="2"
+              (ngAfterViewInit)="markConnectionRendered(ciudad.name, destino)" />
+      </ng-container>
+    </ng-container>
+    
+  </svg>
+  <img src="/images/fotoMapa.jpg" alt="Mapa" class="map-image" draggable="false">
+  <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
+    [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
   </div>
+</div>
   <div class="menu">
     <div class="controls">
       <button (click)="zoomIn()" id="botonZoomIn">+</button>

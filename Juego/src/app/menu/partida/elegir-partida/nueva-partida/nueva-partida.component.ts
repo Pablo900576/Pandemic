@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './nueva-partida.component.css'
 })
 export class NuevaPartidaComponent{
+[x: string]: any;
 
   ciudades: Ciudad[] = [];
   constructor(private cargarCiudad: CargarCiudadesService){}
@@ -30,6 +31,9 @@ export class NuevaPartidaComponent{
   closeCityInfo() {
     this.ciudadSeleccionada = null;
   }
+
+
+
 
   numeroRonda: number = 0;
   zoomLevel: number = 1;
@@ -80,5 +84,21 @@ export class NuevaPartidaComponent{
     this.isDragging = false; 
   }
 
+  getCityCoordinates(cityName: string): { x: number, y: number } | null {
+    const city = this.ciudades.find(ciudad => ciudad.name === cityName);
+    return city ? city.coordinates : null;
+  }
+
+  isConnectionRendered(source: string, target: string): boolean {
+    return this.renderedConnections.has(`${source}-${target}`) || 
+           this.renderedConnections.has(`${target}-${source}`);
+  }
+  
+  renderedConnections: Set<string> = new Set();
+  
+  markConnectionRendered(source: string, target: string): void {
+    this.renderedConnections.add(`${source}-${target}`);
+  }
+  
 
 }
