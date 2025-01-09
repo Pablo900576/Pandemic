@@ -34,9 +34,7 @@ export class RegisterComponent {
   }
 
   enviar() {
-    if (this.miFormulario.valid) {
-      if(this.miFormulario.value.contraseña==this.miFormulario.value.contraseña2){
-        
+    if (this.miFormulario.valid) {   
         const usuario: Usuario = {
         email: this.miFormulario.value.email,
         pw: this.miFormulario.value.contraseña,
@@ -47,7 +45,6 @@ export class RegisterComponent {
       this.authService.register(usuario).subscribe(
         response=> {
           if(response.status== 'success'){
-            console.log(response.hola);
             console.log("Usuario registrado.");
             this.router.navigate(['']);
           }else{
@@ -55,9 +52,6 @@ export class RegisterComponent {
           }
         }
       );
-    }else{
-      this.pwNoCoinciden=true;
-    }
     } else {
       console.log('Error maquina.')
       this.miFormulario.markAllAsTouched();
