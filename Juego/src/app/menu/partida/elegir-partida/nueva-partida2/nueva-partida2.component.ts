@@ -18,6 +18,7 @@ export class NuevaPartida2Component {
   ngOnInit(){
     this.cargarCiudad.getCiudadesEuropa().subscribe(response =>{
       this.ciudades = response
+    this.incrementarVirus();
     })
   }
 
@@ -42,6 +43,7 @@ export class NuevaPartida2Component {
 
   saltarRonda(){
     this.numeroRonda++;
+    this.incrementarVirus();
   }
 
   zoomIn() {
@@ -80,5 +82,41 @@ export class NuevaPartida2Component {
   }
 
 
+  getCityCoordinates(cityName: string): { x: number, y: number } | null {
+    const city = this.ciudades.find(ciudad => ciudad.name === cityName);
+    return city ? city.coordinates : null;
+  }
+
+  isConnectionRendered(source: string, target: string): boolean {
+    return this.renderedConnections.has(`${source}-${target}`) || 
+           this.renderedConnections.has(`${target}-${source}`);
+  }
+
+  renderedConnections: Set<string> = new Set();
+
+  
+  incrementarVirus() {
+    // Paso 1: Obtener una ciudad aleatoria
+    const ciudadAleatoria = this.obtenerCiudadesAleatorias();
+  
+    // Paso 2: Seleccionar un virus aleatorio
+    const virusKeys = ['green', 'red', 'blue', 'yellow'];
+    const virusAleatorio = virusKeys[Math.floor(Math.random() * virusKeys.length)];
+  
+    // Paso 3: Incrementar el virus en la ciudad seleccionada
+    if (ciudadAleatoria) {
+      ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']]++;
+      console.log(`El virus ${virusAleatorio} ha sido incrementado en ${ciudadAleatoria.name}`);
+    }
+  }
+
+
+
+
+
+  obtenerCiudadesAleatorias(): Ciudad | undefined {
+    const randomIndex = Math.floor(Math.random() * this.ciudades.length);
+    return this.ciudades[randomIndex];
+  }
 }
 
