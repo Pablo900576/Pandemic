@@ -8,9 +8,7 @@
       },
       "connectedCities": [
         "Chicago",
-        "Los Angeles",
-        "Manila",
-        "Tokio"
+        "Los Angeles"
       ],
       "characters": [],
       "researchCenter": false,
@@ -272,8 +270,7 @@
       "connectedCities": [
         "San Francisco",
         "Mexico DF",
-        "Chicago",
-        "Sidney"
+        "Chicago"
       ],
       "characters": [],
       "researchCenter": false,
@@ -920,7 +917,6 @@
         "y": 350
       },
       "connectedCities": [
-        "San Francisco",
         "Seul",
         "Osaka",
         "Shanghai"
@@ -1006,7 +1002,6 @@
         "y": 445
       },
       "connectedCities": [
-        "San Francisco",
         "Ho Chi Minh",
         "Taipei",
         "Hong Kong",
@@ -1029,7 +1024,6 @@
         "y": 570
       },
       "connectedCities": [
-        "Los Angeles",
         "Manila",
         "Yakarta"
       ],

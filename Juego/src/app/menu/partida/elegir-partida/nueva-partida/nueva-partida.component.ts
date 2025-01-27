@@ -35,6 +35,7 @@ export class NuevaPartidaComponent{
 
 
 
+ 
   numeroRonda: number = 0;
   zoomLevel: number = 1;
   maxZoom: number = 3; 
@@ -96,9 +97,20 @@ export class NuevaPartidaComponent{
   
   renderedConnections: Set<string> = new Set();
   
-  markConnectionRendered(source: string, target: string): void {
-    this.renderedConnections.add(`${source}-${target}`);
-  }
+  inicializarVirus() {
+    const maxCiudades = 5; 
+
+    const seleccionadas: Set<number> = new Set();
   
+    while (seleccionadas.size < maxCiudades) {
+      const indiceAleatorio = Math.floor(Math.random() * this.ciudades.length);
+  
+     
+      if (!seleccionadas.has(indiceAleatorio)) {
+        seleccionadas.add(indiceAleatorio);
+
+      }
+    }
+  }
 
 }
