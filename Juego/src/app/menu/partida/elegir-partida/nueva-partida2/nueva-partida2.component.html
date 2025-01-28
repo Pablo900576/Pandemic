@@ -16,11 +16,16 @@
       [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
     </div>
   </div>
-  <div class="ciudadesInfectadas">
-    <div *ngFor="let infectada of ciudadesInfectadas">
-      {{infectada.name}}: {{infectada.virus}}
-    </div>
-  </div>
+
+  <cdk-virtual-scroll-viewport class="ciudadesInfectadas" itemSize="60">
+    <dl class="example-dl">
+      <div *ngFor="let infectada of ciudadesInfectadas">
+        <dt class="example-dt">{{infectada.name}}</dt>
+        <dd class="example-dd">{{infectada.virus}}</dd>
+      </div>
+    </dl>
+  </cdk-virtual-scroll-viewport>
+  
   <div class="menu">
     <div class="controls">
       <button (click)="zoomIn()" id="botonZoomIn">+</button>

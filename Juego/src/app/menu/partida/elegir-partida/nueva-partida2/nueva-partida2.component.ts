@@ -3,12 +3,13 @@ import { CargarCiudadesService } from '../../../../services/cargar-ciudades.serv
 import { Ciudad } from '../../../../models/ciudades.model';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 type Virus = "green" | "red" | "blue" | "yellow";
 
 @Component({
   selector: 'app-nueva-partida2',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ScrollingModule],
   templateUrl: './nueva-partida2.component.html',
   styleUrl: './nueva-partida2.component.css'
 })
@@ -17,8 +18,6 @@ export class NuevaPartida2Component {
   constructor(private cargarCiudad: CargarCiudadesService){
     
   }
-
-  
 
   cantidadRonda:number=3;
   cantidadInicial=5;
