@@ -17,9 +17,15 @@
     </div>
   </div>
   <div class="ciudadesInfectadas">
-    <div *ngFor="let infectada of ciudadesInfectadas">
-      {{infectada.name}}: {{infectada.virus}}
-    </div>
+    <ul>
+      <li *ngFor=" let ciudad of ciudadesInfectadas">
+        {{ciudad.name}}:
+        <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
+          <br> &nbsp;&nbsp;&nbsp; {{ virus.color }}
+           {{ virus.cantidad }}
+        </span>
+      </li>
+    </ul>
   </div>
   <div class="menu">
     <div class="controls">
