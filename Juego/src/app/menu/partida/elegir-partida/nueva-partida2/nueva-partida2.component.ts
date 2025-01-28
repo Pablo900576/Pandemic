@@ -3,6 +3,7 @@ import { CargarCiudadesService } from '../../../../services/cargar-ciudades.serv
 import { Ciudad } from '../../../../models/ciudades.model';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+type Virus = "green" | "red" | "blue" | "yellow";
 
 @Component({
   selector: 'app-nueva-partida2',
@@ -13,24 +14,14 @@ import { RouterLink } from '@angular/router';
 })
 export class NuevaPartida2Component {
   ciudades: Ciudad[] = [];
-  constructor(private cargarCiudad: CargarCiudadesService){}
-
-  ngOnInit(){
-    this.cargarCiudad.getCiudadesEuropa().subscribe(response =>{
-      this.ciudades = response
-    this.incrementarVirus();
-    console.log(this.ciudadesInfectadas);
-    })
+  constructor(private cargarCiudad: CargarCiudadesService){
+    
   }
 
-  ciudadSeleccionada: any = null; 
-  selectCity(ciudad: any) {
-    this.ciudadSeleccionada = ciudad;
-  }
+  
 
-  closeCityInfo() {
-    this.ciudadSeleccionada = null;
-  }
+  cantidadRonda:number=3;
+  cantidadInicial=5;
 
   numeroRonda: number = 0;
   zoomLevel: number = 1;
@@ -43,9 +34,24 @@ export class NuevaPartida2Component {
   startY: number = 0;
   ciudadesInfectadas: {name: string, virus: string[]} []=[];
 
-  saltarRonda(){
-    this.numeroRonda++;
-    this.incrementarVirus();
+  
+
+  ngOnInit(){
+    this.cargarCiudad.getCiudadesEuropa().subscribe(response =>{
+      this.ciudades = response
+
+      this.virusIniciales();
+      //console.log(this.ciudadesInfectadas);
+    })
+  }
+
+  ciudadSeleccionada: any = null; 
+  selectCity(ciudad: any) {
+    this.ciudadSeleccionada = ciudad;
+  }
+
+  closeCityInfo() {
+    this.ciudadSeleccionada = null;
   }
 
   zoomIn() {
@@ -96,22 +102,66 @@ export class NuevaPartida2Component {
 
   renderedConnections: Set<string> = new Set();
 
-  
-  incrementarVirus() {
-    // Paso 1: Obtener una ciudad aleatoria
-    const ciudadAleatoria = this.obtenerCiudadesAleatorias();
-  
-    // Paso 2: Seleccionar un virus aleatorio
-    const virusKeys = ['green', 'red', 'blue', 'yellow'];
-    const virusAleatorio = virusKeys[Math.floor(Math.random() * virusKeys.length)];
-  
-    // Paso 3: Incrementar el virus en la ciudad seleccionada
-    if (ciudadAleatoria) {
-      ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']]++;
-      console.log(`El virus ${virusAleatorio} ha sido incrementado en ${ciudadAleatoria.name}`);
-      this.ciudadesInfectadas.push({name: ciudadAleatoria.name, virus: [virusAleatorio]});
+  virus(x:any){
+    for(let i: number=0; i<x;i++ ){
+      this.incrementarVirus();
     }
   }
+
+  virusIniciales(){
+    this.virus(this.cantidadInicial);
+  }
+
+  saltarRonda(){
+    this.numeroRonda++;
+    this.virus(this.cantidadRonda);
+    this.incrementarVirusEnCiudadesConectadas();
+  }
+  incrementarVirusEnCiudadesConectadas() {
+    this.ciudades.forEach(ciudad => {
+      (Object.keys(ciudad.diseaseCount) as Virus[]).forEach(virus => {
+        if (ciudad.diseaseCount[virus] === 3) {
+          console.log(`Ciudad ${ciudad.name} tiene un ${virus} con valor 3`);
+          
+          ciudad.connectedCities.forEach(conectada => {
+            const ciudadConectada = this.ciudades.find(c => c.name === conectada);
+            
+            if (ciudadConectada) {
+              if(ciudadConectada.diseaseCount[virus]==3){
+                console.log(`${ciudadConectada.name} ya tiene nivel 3 de virus ${virus}`)
+              }else{
+              ciudadConectada.diseaseCount[virus]++;
+              console.log(`Incrementado el virus ${virus} en la ciudad ${ciudadConectada.name}`);
+            }}
+          });
+        }
+      });
+    });
+  }
+  
+  incrementarVirus() {
+
+    const ciudadAleatoria = this.obtenerCiudadesAleatorias();
+    
+    
+    const virus = ['green', 'red', 'blue', 'yellow'];
+    const virusAleatorio = virus[Math.floor(Math.random() * virus.length)];
+  
+    if (ciudadAleatoria) {
+      if (ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']] === 3) {
+        const nuevosVirus = virus.filter(v => v !== virusAleatorio);
+        const nuevoVirus = nuevosVirus[Math.floor(Math.random() * nuevosVirus.length)];
+        console.log(`El virus ${virusAleatorio} ya está en nivel 3 en ${ciudadAleatoria.name}. Cambiando a ${nuevoVirus}`);
+        
+        ciudadAleatoria.diseaseCount[nuevoVirus as keyof Ciudad['diseaseCount']]++;
+        console.log(`El virus ${nuevoVirus} ha sido incrementado en ${ciudadAleatoria.name}`);
+      } else {
+        ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']]++;
+        console.log(`El virus ${virusAleatorio} ha sido incrementado en ${ciudadAleatoria.name}`);
+      }
+      this.ciudadesInfectadas.push({name: ciudadAleatoria.name, virus: [virusAleatorio]});
+  }
+}
 
   obtenerCiudadesAleatorias(): Ciudad | undefined {
     const randomIndex = Math.floor(Math.random() * this.ciudades.length);
