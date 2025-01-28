@@ -16,36 +16,41 @@
       [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
     </div>
   </div>
- <div class="menu">
-      <div class="controls">
-        <button (click)="zoomIn()" id="botonZoomIn">+</button>
-        <button (click)="zoomOut()" id="botonZoomOut">-</button>
+  <div class="ciudadesInfectadas">
+    <div *ngFor="let infectada of ciudadesInfectadas">
+      {{infectada.name}}: {{infectada.virus}}
+    </div>
+  </div>
+  <div class="menu">
+    <div class="controls">
+      <button (click)="zoomIn()" id="botonZoomIn">+</button>
+      <button (click)="zoomOut()" id="botonZoomOut">-</button>
+    </div>
+    <div class="contador">
+      <strong>Ronda: {{numeroRonda}}</strong>
+      <button class="button-ronda" (click)="saltarRonda()">Saltar</button>
+    </div>
+    <div class="vacunas-container">
+      <strong>Vacunas:</strong>
+      <div class="vacunas">
+        <img src="/images/vacunas.png">
+        <img src="/images/vacunas.png">
+        <img src="/images/vacunas.png">
+        <img src="/images/vacunas.png">
       </div>
-      <div class="contador">
-        <strong>Ronda: {{numeroRonda}}</strong>
-        <button class="button-ronda" (click)="saltarRonda()">Saltar</button>
-      </div>
-      <div class="vacunas-container">
-        <strong>Vacunas:</strong>
-        <div class="vacunas">
-          <img src="/images/vacunas.png">
-          <img src="/images/vacunas.png">
-          <img src="/images/vacunas.png">
-          <img src="/images/vacunas.png">
-        </div>
       <button class="button-salir" routerLink="../../../">Salir</button>
     </div>
-  <div *ngIf="ciudadSeleccionada" class="city-info">
-    <h2>{{ ciudadSeleccionada.name }}</h2>
-    <p><strong>Región:</strong> {{ ciudadSeleccionada.region }}</p>
-    <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
-    <p><strong>Enfermedades:</strong></p>
-    <ul>
-      <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}</li>
-      <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}</li>
-      <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}</li>
-      <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}</li>
-    </ul>
-    <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
+    <div *ngIf="ciudadSeleccionada" class="city-info">
+      <h2>{{ ciudadSeleccionada.name }}</h2>
+      <p><strong>Región:</strong> {{ ciudadSeleccionada.region }}</p>
+      <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
+      <p><strong>Enfermedades:</strong></p>
+      <ul>
+        <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}</li>
+        <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}</li>
+        <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}</li>
+        <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}</li>
+      </ul>
+      <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
+    </div>
   </div>
-</div>

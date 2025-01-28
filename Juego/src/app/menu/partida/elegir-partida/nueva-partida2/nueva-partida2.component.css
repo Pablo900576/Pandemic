@@ -17,6 +17,19 @@
     cursor: grab;
   }
   
+  .ciudadesInfectadas{
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(0, 0, 0);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    width: 300px;
+    height: 50vh;
+  }
+  
   .menu{
     position: absolute;
     top: 50px;

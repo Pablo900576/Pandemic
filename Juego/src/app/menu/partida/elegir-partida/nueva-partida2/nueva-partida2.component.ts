@@ -19,6 +19,7 @@ export class NuevaPartida2Component {
     this.cargarCiudad.getCiudadesEuropa().subscribe(response =>{
       this.ciudades = response
     this.incrementarVirus();
+    console.log(this.ciudadesInfectadas);
     })
   }
 
@@ -40,6 +41,7 @@ export class NuevaPartida2Component {
   isDragging: boolean = false;
   startX: number = 0;
   startY: number = 0;
+  ciudadesInfectadas: {name: string, virus: string[]} []=[];
 
   saltarRonda(){
     this.numeroRonda++;
@@ -107,12 +109,9 @@ export class NuevaPartida2Component {
     if (ciudadAleatoria) {
       ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']]++;
       console.log(`El virus ${virusAleatorio} ha sido incrementado en ${ciudadAleatoria.name}`);
+      this.ciudadesInfectadas.push({name: ciudadAleatoria.name, virus: [virusAleatorio]});
     }
   }
-
-
-
-
 
   obtenerCiudadesAleatorias(): Ciudad | undefined {
     const randomIndex = Math.floor(Math.random() * this.ciudades.length);
