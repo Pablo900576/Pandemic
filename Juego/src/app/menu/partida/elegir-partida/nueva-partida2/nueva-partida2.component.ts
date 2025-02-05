@@ -158,7 +158,7 @@ export class NuevaPartida2Component {
     const virusAleatorio = virus[Math.floor(Math.random() * virus.length)];
 
     if (ciudadAleatoria) {
-      if(ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']] === 3) {
+      if(ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']] >= 3) {
         const nuevosVirus = virus.filter(v => v !== virusAleatorio);
         const nuevoVirus = nuevosVirus[Math.floor(Math.random() * nuevosVirus.length)];
         console.log(`El virus ${virusAleatorio} ya está en nivel 3 en ${ciudadAleatoria.name}. Cambiando a ${nuevoVirus}`);
