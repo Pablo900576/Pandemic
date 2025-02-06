@@ -150,7 +150,7 @@ ul li {
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  position: relative;
+  position: absolute;
   bottom: 4vh;
   right: 9vh;
   margin: 5px;

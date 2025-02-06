@@ -198,6 +198,7 @@ ul li {
 
 .example-dd {
   height: 30px;
+  margin-bottom: 10px;
 }
 .virus {
   display: inline-block;
