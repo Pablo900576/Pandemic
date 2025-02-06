@@ -150,9 +150,7 @@ export class NuevaPartida2Component {
   }
 
   incrementarVirus() {
-
     const ciudadAleatoria = this.obtenerCiudadesAleatorias();
-
 
     const virus = ['green', 'red', 'blue', 'yellow'];
     const virusAleatorio = virus[Math.floor(Math.random() * virus.length)];
