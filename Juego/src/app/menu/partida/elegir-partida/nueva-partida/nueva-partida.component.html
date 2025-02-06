@@ -22,6 +22,20 @@
     [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
   </div>
 </div>
+<cdk-virtual-scroll-viewport class="ciudadesInfectadas" itemSize="60">
+  <dl class="example-dl">
+    <div *ngFor="let ciudad of ciudadesInfectadas">
+      <dt class="example-dt">{{ciudad.name}}:</dt>
+      <dd class="example-dd">
+        <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
+          {{ virus.color }}
+          {{ virus.cantidad }}
+        </span>
+      </dd>
+    </div>
+  </dl>
+</cdk-virtual-scroll-viewport>
+
   <div class="menu">
     <div class="controls">
       <button (click)="zoomIn()" id="botonZoomIn">+</button>
