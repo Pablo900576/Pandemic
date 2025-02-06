@@ -12,7 +12,12 @@
         "Lisboa"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -35,7 +40,12 @@
         "Paris"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -54,7 +64,12 @@
 "Madrid", "Barcelona", "Oporto", "Paris"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -73,7 +88,12 @@
 "Madrid", "Lisboa", "Bruselas", "Paris"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -92,7 +112,12 @@
        "Madrid", "Barcelona", "Londres", "Bruselas"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -111,7 +136,12 @@
       "Oporto", "Paris", "Zurich", "Berlin"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -130,7 +160,12 @@
      "Bruselas", "Milan", "Munich", "Berlin"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -149,7 +184,12 @@
       "Zurich", "Munich", "Berlin", "Praga"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -168,7 +208,12 @@
       "Munich", "Paris", "Berlin", "Atenas"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -187,7 +232,12 @@
        "Roma", "Atenas", "Zurich", "Munich"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -206,7 +256,12 @@
         "Zurich", "Milan", "Berlin", "Roma"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -225,7 +280,12 @@
         "Munich", "Paris", "Londres", "Praga"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -244,7 +304,12 @@
       "Londres", "Bruselas", "Berlin", "Zurich"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -263,7 +328,12 @@
       "Paris", "Amsterdam", "Berlin", "Viena"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -282,7 +352,12 @@
       "Viena", "Berlin", "Budapest", "Varsovia"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -301,7 +376,12 @@
        "Praga", "Budapest", "Berlin", "Paris"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -320,7 +400,12 @@
         "Budapest", "Belgrado", "Atenas", "Tirana"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -339,7 +424,12 @@
         "Viena", "Zagreb", "Belgrado", "Sofia"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -358,7 +448,12 @@
         "Zagreb", "Budapest", "Tirana", "Atenas"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -377,7 +472,12 @@
       "Belgrado", "Zagreb", "Atenas", "Sofia"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -396,7 +496,12 @@
        "Roma", "Belgrado", "Tirana", "Sofia"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -415,7 +520,12 @@
        "Atenas", "Tirana", "Budapest", "Bucarest"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -434,7 +544,12 @@
       "Sofia", "Kiev", "Budapest", "Minsk"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -453,7 +568,12 @@
         "Bucarest", "Minsk", "San Petersburgo", "Moscu"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -472,7 +592,12 @@
         "Estocolmo", "Copenhague", "Riga", "Helsinki"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -491,7 +616,12 @@
         "Varsovia", "Minsk", "San Petersburgo", "Bucarest"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -510,7 +640,12 @@
         "Estambul", "Minsk", "Praga", "Riga"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -529,7 +664,12 @@
         "Kiev", "Estambul", "San Petersburgo", "Moscu"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -548,7 +688,12 @@
         "Kiev", "Minsk", "Moscu", "Riga"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -567,7 +712,12 @@
         "Kiev", "San Petersburgo", "Minsk", "Riga"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -586,7 +736,12 @@
         "San Petersburgo", "Oslo", "Minsk", "Copenhague"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -605,7 +760,12 @@
         "Oslo", "Riga", "Vilna", "Helsinki"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -624,7 +784,12 @@
        "Copenhague", "Helsinki", "Riga", "Estocolmo"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -643,7 +808,12 @@
        "Copenhague", "Vilna", "Oslo", "Estocolmo"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -662,7 +832,12 @@
        "Oslo", "Helsinki", "Vilna", "Inari"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -681,7 +856,12 @@
        "Estocolmo", "Helsinki", "Reikiavik", "Dublin"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -700,7 +880,12 @@
         "Inari", "Dublin", "Estocolmo", "Esmirna"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -719,7 +904,12 @@
        "Reikiavik", "Inari", "Estocolmo", "Esmirna"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -738,7 +928,12 @@
        "Reikiavik", "Dublin", "Estambul", "Atenas"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,

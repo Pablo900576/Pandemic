@@ -11,13 +11,20 @@
         "Los Angeles"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
+      
       "diseaseCount": {
         "green": 0,
         "red": 0,
         "blue": 0,
         "yellow": 0
       }
+
     },
     {
       "name": "Chicago",
@@ -34,7 +41,12 @@
         "Los Angeles"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -55,7 +67,12 @@
         "Washington"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -76,7 +93,12 @@
         "Washington"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -98,7 +120,12 @@
         "Madrid"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -120,7 +147,12 @@
         "Miami"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -142,7 +174,12 @@
         "Essen"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -165,7 +202,12 @@
         "Argel"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -188,7 +230,12 @@
         "Milan"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -210,7 +257,12 @@
         "Milan"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -231,7 +283,12 @@
         "Estambul"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -252,7 +309,12 @@
         "Moscu"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -273,7 +335,12 @@
         "Chicago"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -295,7 +362,12 @@
         "Bogota"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -318,7 +390,12 @@
         "Lima"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -341,7 +418,12 @@
         "Buenos Aires"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -362,7 +444,12 @@
         "Santiago de Chile"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -381,7 +468,12 @@
         "Lima"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -401,7 +493,12 @@
         "Bogota"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -423,7 +520,12 @@
         "Madrid"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -444,7 +546,12 @@
         "Jartum"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -465,7 +572,12 @@
         "Johannesburgo"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -487,7 +599,12 @@
         "Johannesburgo"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -507,7 +624,12 @@
         "Jartum"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -529,7 +651,12 @@
         "El Cairo"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -550,7 +677,12 @@
         "Bagdad"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -571,7 +703,12 @@
         "Karachi"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -593,7 +730,12 @@
         "Moscu"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -615,7 +757,12 @@
         "El Cairo"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -636,7 +783,12 @@
         "San Petersburgo"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -658,7 +810,12 @@
         "Nueva Delhi"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -681,7 +838,12 @@
         "Bombay"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -702,7 +864,12 @@
         "Madras"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -725,7 +892,12 @@
         "Calcuta"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -747,7 +919,12 @@
         "Bangkok"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -770,7 +947,12 @@
         "Yakarta"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -792,7 +974,12 @@
         "Sidney"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -815,7 +1002,12 @@
         "Hong Kong"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -838,7 +1030,12 @@
         "Shanghai"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -861,7 +1058,12 @@
         "Taipei"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -881,7 +1083,12 @@
         "Shanghai"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -901,7 +1108,12 @@
         "Tokio"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -922,7 +1134,12 @@
         "Shanghai"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -942,7 +1159,12 @@
         "Taipei"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -964,7 +1186,12 @@
         "Manila"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -986,7 +1213,12 @@
         "Manila"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -1008,7 +1240,12 @@
         "Sidney"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
@@ -1028,7 +1265,12 @@
         "Yakarta"
       ],
       "characters": [],
-      "researchCenter": false,
+      "brotes":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "diseaseCount": {
         "green": 0,
         "red": 0,
