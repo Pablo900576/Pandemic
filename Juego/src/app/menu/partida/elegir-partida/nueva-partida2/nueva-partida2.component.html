@@ -22,8 +22,21 @@
         <dt class="example-dt">{{ciudad.name}}:</dt>
         <dd class="example-dd">
           <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
-            {{ virus.color }}
-            {{ virus.cantidad }}
+            {{ virus.cantidad}}
+            <div *ngIf="virus.color=='red'" class="virus">
+              <img src="/images/virusRojo.png">
+            </div>
+            <div *ngIf="virus.color=='yellow'" class="virus">
+              <img src="/images/virusAmarillo.png">
+            </div>
+            <div *ngIf="virus.color=='green'" class="virus">
+              <img src="/images/virusVerde.png">
+            </div>
+            <div *ngIf="virus.color=='blue'" class="virus">
+              <img src="/images/virusAzul.png">
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
           </span>
         </dd>
       </div>
@@ -39,16 +52,8 @@
       <strong>Ronda: {{numeroRonda}}</strong>
       <button class="button-ronda" (click)="saltarRonda()">Saltar</button>
     </div>
-    <div class="vacunas-container">
-      <strong>Vacunas:</strong>
-      <div class="vacunas">
-        <img src="/images/vacunas.png">
-        <img src="/images/vacunas.png">
-        <img src="/images/vacunas.png">
-        <img src="/images/vacunas.png">
-      </div>
+
       <button class="button-salir" routerLink="../../../">Salir</button>
-    </div>
     <div *ngIf="ciudadSeleccionada" class="city-info">
       <h2>{{ ciudadSeleccionada.name }}</h2>
       <p><strong>Región:</strong> {{ ciudadSeleccionada.region }}</p>
