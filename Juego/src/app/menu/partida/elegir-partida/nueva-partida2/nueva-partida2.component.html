@@ -22,7 +22,16 @@
         <dt class="example-dt">{{ciudad.name}}:</dt>
         <dd class="example-dd">
           <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
-            {{ virus.cantidad}}
+            <div *ngIf="virus.cantidad==1" class="virus">
+              <img src="/images/numero1.png">
+            </div>
+            <div *ngIf="virus.cantidad==2" class="virus">
+              <img src="/images/numero2.png">
+            </div>
+            <div *ngIf="virus.cantidad>=3" class="virus">
+              <img src="/images/numero3.png">
+            </div>
+            &nbsp;
             <div *ngIf="virus.color=='red'" class="virus">
               <img src="/images/virusRojo.png">
             </div>
@@ -36,7 +45,7 @@
               <img src="/images/virusAzul.png">
             </div>
             &nbsp;&nbsp;&nbsp;&nbsp;
-
+  
           </span>
         </dd>
       </div>

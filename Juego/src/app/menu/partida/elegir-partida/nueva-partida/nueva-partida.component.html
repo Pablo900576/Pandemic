@@ -75,12 +75,12 @@
     <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
     <p><strong>Enfermedades:</strong></p>
     <ul>
-      <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}</li>
-      <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}</li>
-      <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}</li>
-      <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}</li>
+      <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"green")'><img src="/images/jeringaVerde.png"></button></li>
+      <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"red")'><img src="/images/jeringaRoja.png"></button></li>
+      <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"blue")'><img src="/images/jeringaAzul.png"></button></li>
+      <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"yellow")'><img src="/images/jeringaAmarilla.png"></button></li>
     </ul>
-    <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
+    <button (click)="closeCityInfo()" class="button-cerrar"><img src="/images/botonCerrar.png"></button>
   </div>
 </div>
 

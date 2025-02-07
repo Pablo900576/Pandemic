@@ -24,7 +24,7 @@ export class NuevaPartida2Component {
 
 
   cantidadRonda: number = 3;
-  cantidadInicial = 5;
+  cantidadInicial = 0;
 
   numeroRonda: number = 0;
   zoomLevel: number = 1;
@@ -142,6 +142,7 @@ export class NuevaPartida2Component {
               } else {
                 ciudadConectada.diseaseCount[virus]++;
                 console.log(`Incrementado el virus ${virus} en la ciudad conectada de ${ciudad.name}: ${ciudadConectada.name}`);
+                ciudad.brotes[virus]=false;
               }
             }
           });

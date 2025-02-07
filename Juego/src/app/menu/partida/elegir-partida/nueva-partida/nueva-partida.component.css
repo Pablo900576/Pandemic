@@ -73,8 +73,8 @@
 .city-info {
   position: absolute;
   top: 50px;
-  left: 50px;
-  background-color: rgba(255, 255, 255, 0.5);
+  left: 500px;
+  background-color: white;/*rgba(255, 255, 255, 0.5);*/
   color: rgb(0, 0, 0);
   padding: 15px;
   border-radius: 8px;
@@ -105,9 +105,14 @@ ul li {
   display: flex;
   align-items: center;
   justify-content: center;
+  float: right;
   cursor: pointer;
   border-radius: 4px;
   margin: 2px;
+}
+
+.button-cerrar img{
+  height: 50px;
 }
 
 .button-salir{
@@ -146,18 +151,13 @@ ul li {
 }
 
 .vacunas{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  position: absolute;
-  bottom: 4vh;
-  right: 9vh;
-  margin: 5px;
+  background: none; 
+  border: none;
+  cursor: pointer;
 }
 
 .vacunas img{
-  height: 100px;
+  height: 50px;
 }
 
 .ciudadesInfectadas{
