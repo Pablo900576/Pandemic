@@ -25,7 +25,7 @@
 <cdk-virtual-scroll-viewport class="ciudadesInfectadas" itemSize="60">
   <dl class="example-dl">
     <div *ngFor="let ciudad of ciudadesInfectadas">
-      <dt class="example-dt">{{ciudad.name}}:</dt>
+      <dt class="example-dt" (click)="selectCity(ciudad)">{{ciudad.name}}:</dt>
       <dd class="example-dd">
         <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
           <div *ngIf="virus.cantidad==1" class="virus">
