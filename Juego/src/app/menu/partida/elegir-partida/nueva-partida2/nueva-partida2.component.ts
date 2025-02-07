@@ -43,7 +43,7 @@ export class NuevaPartida2Component {
     this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
       this.ciudades = response
       this.virusIniciales();
-
+      this.resultadoPartida();
     })
   }
 
@@ -111,6 +111,7 @@ export class NuevaPartida2Component {
       this.incrementarVirus();
 
     }
+
   }
 
   virusIniciales() {
@@ -191,6 +192,7 @@ export class NuevaPartida2Component {
         ciudadAleatoria.diseaseCount[nuevoVirus as keyof Ciudad['diseaseCount']]++;
         console.log(`El virus ${nuevoVirus} ha sido incrementado en ${ciudadAleatoria.name}`);
       }else{
+        this.resultadoPartida();
         console.log("NO QUEDAN CIUDADES A LAS QUE INFECTAR!!!!!!!!")
       }
     }else {
@@ -225,4 +227,22 @@ export class NuevaPartida2Component {
     const ciudadAleatoria = Math.floor(Math.random() * this.ciudades.length);
     return this.ciudades[ciudadAleatoria];
   }
+
+  resultadoPartida() {
+    const todasInfectadas = this.ciudades.every(ciudad =>
+      Object.values(ciudad.diseaseCount).every(cantidad => cantidad == 2)
+    );
+
+    const noInfectadas = this.ciudades.every(ciudad =>
+      Object.values(ciudad.diseaseCount).every(cantidad => cantidad == 0)
+    );
+  
+    if (todasInfectadas) {
+      alert("PERDISTEEE PRINGADO!!")
+      
+    } else if(noInfectadas){
+      alert("GANASTE MONGOL")
+    }
+  }
+  
 }
