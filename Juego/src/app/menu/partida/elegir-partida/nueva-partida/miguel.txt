@@ -1,0 +1,84 @@
+INSTALACION DESDE 0
+    Sudo su 
+
+    Sudo apt update && upgrade –y 
+
+    sudo apt-get install python3-dev libxml2-dev libxslt1-dev zlib1g-dev libsasl2-dev libldap2-dev build-essential libssl-dev libffi-dev libmysqlclient-dev libjpeg-dev libpq-dev libjpeg8-dev liblcms2-dev libblas-dev libatlas-base-dev 
+
+    sudo apt install git python3-pip libpq-dev libsasl2-dev 
+
+    Su – postgres –c “createuser -s odoo18” 
+
+    Su postgres 
+
+    Psql 
+
+    Alter role odoo18 with password “admin” 
+
+    Control+z 
+
+    Exit 
+
+    Exit 
+
+    sudo useradd -m -d /opt/odoo18 -U -r -s /bin/bash odoo18 
+
+    Cd /opt/odoo18 
+
+    git clone https://github.com/odoo/odoo.git --depth 1 --brach 18.0 --single-brach odoo 
+
+    Cd odoo 
+
+    Ls 
+
+    Cd ..  
+
+    sudo apt install python3-venv 
+
+    Python3 –m venv odoo18 
+
+    source odoo18/bin/activate  
+
+    Clear 
+
+    pip install -r odoo/requirements.txt 
+
+    Cd /odoo/debian/  
+
+    Ls 
+
+    Nano odoo.conf 
+
+        Db_user=odoo18 
+
+        Db_password = admin 
+
+        Addons_path= /opt/odoo18/odoo/addons 
+
+    Control-y 
+
+    Control-x 
+
+    Cd /opt/odoo18
+
+    Sudo su odoo18
+
+    Source odoo18/bin/activate 
+
+    Cd odoo 
+
+    Python3 odoo-bin –c debian/odoo.conf 
+
+VOLVER A ABRIRLO DESPUES DE INSTALARLO: 
+
+    Sudo su 
+
+    Cd /opt/odoo18 
+
+    Sudo su odoo18 
+
+    Source odoo18/bin/activate 
+
+    Cd odoo 
+
+    Python3 odoo-bin –c debian/odoo.conf 
