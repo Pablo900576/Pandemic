@@ -161,21 +161,15 @@ ul li {
   margin-top: 10px;
 }
 
-.vacunas {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  position: relative;
-  bottom: 4vh;
-  right: 9vh;
-  margin: 5px;
+.vacunas{
+  background: none; 
+  border: none;
+  cursor: pointer;
 }
 
-.vacunas img {
-  height: 100px;
+.vacunas img{
+  height: 50px;
 }
-
 .ciudadesInfectadas{
   position: absolute;
   top: 50px;

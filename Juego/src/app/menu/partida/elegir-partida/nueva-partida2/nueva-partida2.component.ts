@@ -24,7 +24,7 @@ export class NuevaPartida2Component {
 
 
   cantidadRonda: number = 3;
-  cantidadInicial = 0;
+  cantidadInicial = 5;
 
   numeroRonda: number = 0;
   zoomLevel: number = 1;
@@ -43,7 +43,7 @@ export class NuevaPartida2Component {
     this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
       this.ciudades = response
       this.virusIniciales();
-      this.resultadoPartida();
+      console.table(this.ciudadesInfectadas)
     })
   }
 
@@ -221,6 +221,22 @@ export class NuevaPartida2Component {
     return ciudadesFiltradas[ciudadAleatoria];
 }
 
+vacunas(ciudad:any, virus: Virus){
+  const ciudadVacunar= this.ciudades.find(city=>city.name===ciudad.name);
+  if(ciudadVacunar && ciudadVacunar.diseaseCount[virus]>0){
+    ciudadVacunar.diseaseCount[virus]--;
+    if(Object.values(ciudadVacunar.diseaseCount).every(virus=> virus===0)){
+      const index = this.ciudadesInfectadas.findIndex(c => c.name === ciudadVacunar.name);
+      if (index !== -1) {
+        this.ciudadesInfectadas.splice(index, 1);
+      }
+    }
+    console.log(`Vacuna aplicada a ${virus} en ${ciudadVacunar.name}`);
+  }else{
+    console.error("Ciudad no encontrada o vacuna no aplicada");
+  }
+
+}
 
 
   obtenerCiudadesAleatorias(): Ciudad | undefined {
