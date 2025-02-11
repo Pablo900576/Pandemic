@@ -36,8 +36,53 @@ export class NuevaPartida2Component {
   startX: number = 0;
   startY: number = 0;
   ciudadesInfectadas: any[] = [];
+  antidotoVerde= false;
+  antidotoAmarillo= false;
+  antidotoRojo= false;
+  antidotoAzul= false;
 
+  numeroAG=0;
+  numeroAR=0;
+  numeroAB=0;
+  numeroAY=0;
 
+  sumar(x: string) {
+    if (x == "verde") {
+      if (this.antidotoVerde == false) {
+        if (this.numeroAG < 2) {
+          this.numeroAG++;
+        } else {
+          this.antidotoVerde = true;
+        }
+      }
+    }else if (x == "rojo") {
+      if (this.antidotoRojo == false) {
+        if (this.numeroAR < 2) {
+          this.numeroAR++;
+        } else {
+          this.antidotoRojo = true;
+        }
+      }
+    }else if (x == "azul") {
+      if (this.antidotoAzul == false) {
+        if (this.numeroAB < 2) {
+          this.numeroAB++;
+        } else {
+          this.antidotoAzul = true;
+        }
+      }
+    }else if (x == "amarillo") {
+      if (this.antidotoAmarillo == false) {
+        if (this.numeroAY < 2) {
+          this.numeroAY++;
+        } else {
+          this.antidotoAmarillo = true;
+        }
+      }
+    }else{
+      console.error("Antidoto invalido")
+    }
+  }
 
   ngOnInit() {
     this.cargarCiudad.getCiudadesEuropa().subscribe(response => {

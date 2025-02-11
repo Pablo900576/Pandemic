@@ -1,62 +1,56 @@
 <div class="general">
   <div class="mapaCiudades" [style.transform]="zoomTransform" (mousedown)="onMouseDown($event)"
-  (mousemove)="onMouseMove($event)"
-  (mouseup)="onMouseUp()">
-  <svg class="city-lines" xmlns="http://www.w3.org/2000/svg">
-    <ng-container *ngFor="let ciudad of ciudades; let i = index">
-      <ng-container *ngFor="let destino of ciudad.connectedCities">
-        <line *ngIf="!isConnectionRendered(ciudad.name, destino)"
-              [attr.x1]="ciudad.coordinates.x"
-              [attr.y1]="ciudad.coordinates.y"
-              [attr.x2]="getCityCoordinates(destino)?.x"
-              [attr.y2]="getCityCoordinates(destino)?.y"
-              stroke="blue"
-              stroke-width="2"
-             />
+    (mousemove)="onMouseMove($event)" (mouseup)="onMouseUp()">
+    <svg class="city-lines" xmlns="http://www.w3.org/2000/svg">
+      <ng-container *ngFor="let ciudad of ciudades; let i = index">
+        <ng-container *ngFor="let destino of ciudad.connectedCities">
+          <line *ngIf="!isConnectionRendered(ciudad.name, destino)" [attr.x1]="ciudad.coordinates.x"
+            [attr.y1]="ciudad.coordinates.y" [attr.x2]="getCityCoordinates(destino)?.x"
+            [attr.y2]="getCityCoordinates(destino)?.y" stroke="blue" stroke-width="2" />
+        </ng-container>
       </ng-container>
-    </ng-container>
-    
-  </svg>
-  <img src="/images/fotoMapa.jpg" alt="Mapa" class="map-image" draggable="false">
-  <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
-    [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
-  </div>
-</div>
-<cdk-virtual-scroll-viewport class="ciudadesInfectadas" itemSize="60">
-  <dl class="example-dl">
-    <div *ngFor="let ciudad of ciudadesInfectadas">
-      <dt class="example-dt" (click)="selectCity(ciudad)">{{ciudad.name}}:</dt>
-      <dd class="example-dd">
-        <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
-          <div *ngIf="virus.cantidad==1" class="virus">
-            <img src="/images/numero1.png">
-          </div>
-          <div *ngIf="virus.cantidad==2" class="virus">
-            <img src="/images/numero2.png">
-          </div>
-          <div *ngIf="virus.cantidad>=3" class="virus">
-            <img src="/images/numero3.png">
-          </div>
-          &nbsp;
-          <div *ngIf="virus.color=='red'" class="virus">
-            <img src="/images/virusRojo.png">
-          </div>
-          <div *ngIf="virus.color=='yellow'" class="virus">
-            <img src="/images/virusAmarillo.png">
-          </div>
-          <div *ngIf="virus.color=='green'" class="virus">
-            <img src="/images/virusVerde.png">
-          </div>
-          <div *ngIf="virus.color=='blue'" class="virus">
-            <img src="/images/virusAzul.png">
-          </div>
-          &nbsp;&nbsp;&nbsp;&nbsp;
 
-        </span>
-      </dd>
+    </svg>
+    <img src="/images/fotoMapa.jpg" alt="Mapa" class="map-image" draggable="false">
+    <div *ngFor="let ciudad of ciudades" class="city-point" [style.top.px]="ciudad.coordinates.y"
+      [style.left.px]="ciudad.coordinates.x" (click)="selectCity(ciudad)">
     </div>
-  </dl>
-</cdk-virtual-scroll-viewport>
+  </div>
+  <cdk-virtual-scroll-viewport class="ciudadesInfectadas" itemSize="60">
+    <dl class="example-dl">
+      <div *ngFor="let ciudad of ciudadesInfectadas">
+        <dt class="example-dt" (click)="selectCity(ciudad)">{{ciudad.name}}:</dt>
+        <dd class="example-dd">
+          <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
+            <div *ngIf="virus.cantidad==1" class="virus">
+              <img src="/images/numero1.png">
+            </div>
+            <div *ngIf="virus.cantidad==2" class="virus">
+              <img src="/images/numero2.png">
+            </div>
+            <div *ngIf="virus.cantidad>=3" class="virus">
+              <img src="/images/numero3.png">
+            </div>
+            &nbsp;
+            <div *ngIf="virus.color=='red'" class="virus">
+              <img src="/images/virusRojo.png">
+            </div>
+            <div *ngIf="virus.color=='yellow'" class="virus">
+              <img src="/images/virusAmarillo.png">
+            </div>
+            <div *ngIf="virus.color=='green'" class="virus">
+              <img src="/images/virusVerde.png">
+            </div>
+            <div *ngIf="virus.color=='blue'" class="virus">
+              <img src="/images/virusAzul.png">
+            </div>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+
+          </span>
+        </dd>
+      </div>
+    </dl>
+  </cdk-virtual-scroll-viewport>
 
   <div class="menu">
     <div class="controls">
@@ -75,13 +69,15 @@
     <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
     <p><strong>Enfermedades:</strong></p>
     <ul>
-      <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"green")'><img src="/images/jeringaVerde.png"></button></li>
-      <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"red")'><img src="/images/jeringaRoja.png"></button></li>
-      <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"blue")'><img src="/images/jeringaAzul.png"></button></li>
-      <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"yellow")'><img src="/images/jeringaAmarilla.png"></button></li>
+      <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}&nbsp;&nbsp;<button class="vacunas"
+          (click)='vacunas(ciudadSeleccionada,"green")'><img src="/images/jeringaVerde.png"></button></li>
+      <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}&nbsp;&nbsp;<button class="vacunas"
+          (click)='vacunas(ciudadSeleccionada,"red")'><img src="/images/jeringaRoja.png"></button></li>
+      <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}&nbsp;&nbsp;<button class="vacunas"
+          (click)='vacunas(ciudadSeleccionada,"blue")'><img src="/images/jeringaAzul.png"></button></li>
+      <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}&nbsp;&nbsp;<button class="vacunas"
+          (click)='vacunas(ciudadSeleccionada,"yellow")'><img src="/images/jeringaAmarilla.png"></button></li>
     </ul>
     <button (click)="closeCityInfo()" class="button-cerrar"><img src="/images/botonCerrar.png"></button>
   </div>
 </div>
-
-
