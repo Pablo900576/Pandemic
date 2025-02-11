@@ -57,6 +57,16 @@
       <button (click)="zoomIn()" id="botonZoomIn">+</button>
       <button (click)="zoomOut()" id="botonZoomOut">-</button>
     </div>
+    <div class="antidotos">
+      <button (click)="sumar('azul')">Investigar antidoto azul</button>
+      <button (click)="sumar('verde')">Investigar antidoto verde</button>
+      <button (click)="sumar('rojo')">Investigar antidoto rojo</button>
+      <button (click)="sumar('amarillo')">Investigar antidoto amarillo</button>
+      <div class="antidotoAzul" *ngIf="antidotoAzul"><img src="/images/antidotoAzul.png"></div>
+      <div class="antidotoRojo" *ngIf="antidotoRojo"><img src="/images/antidotoRojo.png"></div>
+      <div class="antidotoVerde" *ngIf="antidotoVerde"><img src="/images/antidotoVerde.png"></div>
+      <div class="antidotoAmarillo" *ngIf="antidotoAmarillo"><img src="/images/antidotoAmarillo.png"></div>
+    </div>
     <div class="contador">
       <strong>Ronda: {{numeroRonda}}</strong>
       <button class="button-ronda" (click)="saltarRonda()">Saltar</button>
