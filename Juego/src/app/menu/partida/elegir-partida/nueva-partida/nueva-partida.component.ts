@@ -36,6 +36,7 @@ export class NuevaPartidaComponent {
     this.cargarCiudad.getCiudadesMundo().subscribe(response => {
       this.ciudades = response
       this.virusIniciales();
+
     })
   }
 
