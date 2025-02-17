@@ -5,12 +5,13 @@ export interface Ciudad {
         x: number;
         y: number;
     };
+ 
     brotes: {
-        red: boolean,
-        yellow: boolean,
-        blue: boolean,
-        green: boolean,
-    }
+        red: boolean;
+        yellow: boolean;
+        blue: boolean;
+        green: boolean;
+    };
     connectedCities: [];
     characters: [];
     diseaseCount: {
@@ -18,6 +19,12 @@ export interface Ciudad {
         red: number;
         blue: number;
         yellow: number;
-    }
+    };
+    exterminado:{
+        red:boolean;
+        green:boolean;
+        blue:boolean;
+        yellow:boolean;
+      };
 }
 

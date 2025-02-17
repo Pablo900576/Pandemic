@@ -57,15 +57,17 @@
       <button (click)="zoomIn()" id="botonZoomIn">+</button>
       <button (click)="zoomOut()" id="botonZoomOut">-</button>
     </div>
-    <div class="antidotos">
-      <button (click)="sumar('azul')">Investigar antidoto azul</button>
-      <button (click)="sumar('verde')">Investigar antidoto verde</button>
-      <button (click)="sumar('rojo')">Investigar antidoto rojo</button>
-      <button (click)="sumar('amarillo')">Investigar antidoto amarillo</button>
-      <div class="antidotoAzul" *ngIf="antidotoAzul"><img src="/images/antidotoAzul.png"></div>
-      <div class="antidotoRojo" *ngIf="antidotoRojo"><img src="/images/antidotoRojo.png"></div>
-      <div class="antidotoVerde" *ngIf="antidotoVerde"><img src="/images/antidotoVerde.png"></div>
-      <div class="antidotoAmarillo" *ngIf="antidotoAmarillo"><img src="/images/antidotoAmarillo.png"></div>
+    <div class="antidotosGeneral">
+      <button (click)="sumar('blue')" *ngIf="antidotoAzul==false">Investigar antidoto azul</button>
+      <button (click)="sumar('green')" *ngIf="antidotoVerde==false">Investigar antidoto verde</button>
+      <button (click)="sumar('red')" *ngIf="antidotoRojo==false">Investigar antidoto rojo</button>
+      <button (click)="sumar('yellow')" *ngIf="antidotoAmarillo==false">Investigar antidoto amarillo</button>
+      <div class="antidotos">
+      <div class="antidoto" id="antidotoAzul" *ngIf="antidotoAzul && !pastillaB" ><img (click)='curar("blue")' src="/images/antidotoAzul.png"></div>
+      <div class="antidoto" id="antidotoRojo" *ngIf="antidotoRojo && !pastillaR"><img (click)='curar("red")' src="/images/antidotoRojo.png"></div>
+      <div class="antidoto" id="antidotoVerde" *ngIf="antidotoVerde && !pastillaG"><img (click)='curar("green")' src="/images/antidotoVerde.png"></div>
+      <div class="antidoto" id="antidotoAmarillo" *ngIf="antidotoAmarillo && !pastillaY"><img (click)='curar("yellow")' src="/images/antidotoAmarillo.png"></div>
+    </div>
     </div>
     <div class="contador">
       <strong>Ronda: {{numeroRonda}}</strong>

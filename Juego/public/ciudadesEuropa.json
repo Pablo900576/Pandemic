@@ -12,6 +12,12 @@
         "Lisboa"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -40,6 +46,12 @@
         "Paris"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -64,6 +76,12 @@
 "Madrid", "Barcelona", "Oporto", "Paris"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -88,6 +106,12 @@
 "Madrid", "Lisboa", "Bruselas", "Paris"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -112,6 +136,12 @@
        "Madrid", "Barcelona", "Londres", "Bruselas"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -136,6 +166,12 @@
       "Oporto", "Paris", "Zurich", "Berlin"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -160,6 +196,12 @@
      "Bruselas", "Milan", "Munich", "Berlin"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -184,6 +226,12 @@
       "Zurich", "Munich", "Berlin", "Praga"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -208,6 +256,12 @@
       "Munich", "Paris", "Berlin", "Atenas"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -232,6 +286,12 @@
        "Roma", "Atenas", "Zurich", "Munich"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -256,6 +316,12 @@
         "Zurich", "Milan", "Berlin", "Roma"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -280,6 +346,12 @@
         "Munich", "Paris", "Londres", "Praga"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -304,6 +376,12 @@
       "Londres", "Bruselas", "Berlin", "Zurich"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -328,6 +406,12 @@
       "Paris", "Amsterdam", "Berlin", "Viena"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -352,6 +436,12 @@
       "Viena", "Berlin", "Budapest", "Varsovia"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -376,6 +466,12 @@
        "Praga", "Budapest", "Berlin", "Paris"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -400,6 +496,12 @@
         "Budapest", "Belgrado", "Atenas", "Tirana"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -424,6 +526,12 @@
         "Viena", "Zagreb", "Belgrado", "Sofia"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -448,6 +556,12 @@
         "Zagreb", "Budapest", "Tirana", "Atenas"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -472,6 +586,12 @@
       "Belgrado", "Zagreb", "Atenas", "Sofia"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -496,6 +616,12 @@
        "Roma", "Belgrado", "Tirana", "Sofia"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -520,6 +646,12 @@
        "Atenas", "Tirana", "Budapest", "Bucarest"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -544,6 +676,12 @@
       "Sofia", "Kiev", "Budapest", "Minsk"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -568,6 +706,12 @@
         "Bucarest", "Minsk", "San Petersburgo", "Moscu"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -592,6 +736,12 @@
         "Estocolmo", "Copenhague", "Riga", "Helsinki"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -616,6 +766,12 @@
         "Varsovia", "Minsk", "San Petersburgo", "Bucarest"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -640,6 +796,12 @@
         "Estambul", "Minsk", "Praga", "Riga"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -664,6 +826,12 @@
         "Kiev", "Estambul", "San Petersburgo", "Moscu"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -688,6 +856,12 @@
         "Kiev", "Minsk", "Moscu", "Riga"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -712,6 +886,12 @@
         "Kiev", "San Petersburgo", "Minsk", "Riga"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -736,6 +916,12 @@
         "San Petersburgo", "Oslo", "Minsk", "Copenhague"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -760,6 +946,12 @@
         "Oslo", "Riga", "Vilna", "Helsinki"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -784,6 +976,12 @@
        "Copenhague", "Helsinki", "Riga", "Estocolmo"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -808,6 +1006,12 @@
        "Copenhague", "Vilna", "Oslo", "Estocolmo"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -832,6 +1036,12 @@
        "Oslo", "Helsinki", "Vilna", "Inari"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -856,6 +1066,12 @@
        "Estocolmo", "Helsinki", "Reikiavik", "Dublin"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -880,6 +1096,12 @@
         "Inari", "Dublin", "Estocolmo", "Esmirna"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -904,6 +1126,12 @@
        "Reikiavik", "Inari", "Estocolmo", "Esmirna"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,
@@ -928,6 +1156,12 @@
        "Reikiavik", "Dublin", "Estambul", "Atenas"
       ],
       "characters": [],
+      "exterminado":{
+        "red":false,
+        "green":false,
+        "blue":false,
+        "yellow":false
+      },
       "brotes":{
         "red":false,
         "green":false,

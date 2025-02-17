@@ -41,48 +41,14 @@ export class NuevaPartida2Component {
   antidotoRojo= false;
   antidotoAzul= false;
 
+
+
   numeroAG=0;
   numeroAR=0;
   numeroAB=0;
   numeroAY=0;
 
-  sumar(x: string) {
-    if (x == "verde") {
-      if (this.antidotoVerde == false) {
-        if (this.numeroAG < 2) {
-          this.numeroAG++;
-        } else {
-          this.antidotoVerde = true;
-        }
-      }
-    }else if (x == "rojo") {
-      if (this.antidotoRojo == false) {
-        if (this.numeroAR < 2) {
-          this.numeroAR++;
-        } else {
-          this.antidotoRojo = true;
-        }
-      }
-    }else if (x == "azul") {
-      if (this.antidotoAzul == false) {
-        if (this.numeroAB < 2) {
-          this.numeroAB++;
-        } else {
-          this.antidotoAzul = true;
-        }
-      }
-    }else if (x == "amarillo") {
-      if (this.antidotoAmarillo == false) {
-        if (this.numeroAY < 2) {
-          this.numeroAY++;
-        } else {
-          this.antidotoAmarillo = true;
-        }
-      }
-    }else{
-      console.error("Antidoto invalido")
-    }
-  }
+
 
   ngOnInit() {
     this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
@@ -154,9 +120,7 @@ export class NuevaPartida2Component {
   virus(x: any) {
     for (let i: number = 0; i < x; i++) {
       this.incrementarVirus();
-
     }
-
   }
 
   virusIniciales() {
@@ -167,7 +131,8 @@ export class NuevaPartida2Component {
   saltarRonda() {
     this.numeroRonda++;
     this.virus(this.cantidadRonda);
-    console.log(",")
+    this.resultadoPartida();
+    console.log(",");
 
   }
   incrementarVirusEnCiudadesConectadas() {
@@ -214,7 +179,8 @@ export class NuevaPartida2Component {
     const virusAleatorio = virus[Math.floor(Math.random() * virus.length)];
 
     if (ciudadAleatoria) {
-      if (ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']] == 3 && ciudadAleatoria.brotes[virusAleatorio as keyof Ciudad['brotes']]==false) {
+      if (ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']] == 3 && 
+        ciudadAleatoria.brotes[virusAleatorio as keyof Ciudad['brotes']]==false ) {
 
 
         this.incrementarVirusEnCiudadesConectadas();
@@ -232,7 +198,7 @@ export class NuevaPartida2Component {
         .filter(virus => ciudadAleatoria.diseaseCount[virus] < 3);
         
         const nuevoVirus = nuevosVirus[Math.floor(Math.random() * nuevosVirus.length)];
-
+        this.añadirCiudad(ciudadAleatoria);
 
         ciudadAleatoria.diseaseCount[nuevoVirus as keyof Ciudad['diseaseCount']]++;
         console.log(`El virus ${nuevoVirus} ha sido incrementado en ${ciudadAleatoria.name}`);
@@ -241,15 +207,21 @@ export class NuevaPartida2Component {
         console.log("NO QUEDAN CIUDADES A LAS QUE INFECTAR!!!!!!!!")
       }
     }else {
-
+        if(ciudadAleatoria.exterminado[virusAleatorio as keyof Ciudad['exterminado']]==false){
         ciudadAleatoria.diseaseCount[virusAleatorio as keyof Ciudad['diseaseCount']]++;
         console.log(`El virus ${virusAleatorio} ha sido incrementado en ${ciudadAleatoria.name}`);
-      }
+        this.añadirCiudad(ciudadAleatoria);
+          }
+    }
 
 
-      if (!this.ciudadesInfectadas.some(ciudad => ciudad.name === ciudadAleatoria.name)) {
-        this.ciudadesInfectadas.push(ciudadAleatoria);
-      }
+      
+    }
+  }
+
+  añadirCiudad(ciudadAleatoria:any){
+    if (!this.ciudadesInfectadas.some(ciudad => ciudad.name === ciudadAleatoria.name)) {
+      this.ciudadesInfectadas.push(ciudadAleatoria);
     }
   }
 
@@ -280,7 +252,77 @@ vacunas(ciudad:any, virus: Virus){
   }else{
     console.error("Ciudad no encontrada o vacuna no aplicada");
   }
+}
 
+pastillaR=false;
+pastillaB=false;
+pastillaY=false;
+pastillaG=false;
+
+curar(x: Virus) {
+  if(x=="green"){
+    this.pastillaG=true;
+  }else if(x=="blue"){
+    this.pastillaB=true;
+  }else if(x=="red"){
+    this.pastillaR=true;
+  }else if(x=="yellow"){
+    this.pastillaY=true;
+  }
+  this.ciudades.forEach(ciudad => {
+    ciudad.exterminado[x]=true;
+   if(ciudad.diseaseCount[x]>0){
+
+      ciudad.diseaseCount[x]=0;
+    console.log(`Virus ${x} exterminado en ${ciudad.name}`)
+    if(Object.values(ciudad.diseaseCount).every(virus=> virus===0)){
+      const index = this.ciudadesInfectadas.findIndex(c => c.name === ciudad.name);
+      if (index !== -1) {
+        this.ciudadesInfectadas.splice(index, 1);
+      }
+    }
+   }
+  });
+
+}
+
+
+sumar(x: string) {
+if (x == "green") {
+if (this.antidotoVerde == false) {
+  if (this.numeroAG < 2) {
+    this.numeroAG++;
+  } else {
+    this.antidotoVerde = true;
+  }
+}
+}else if (x == "red") {
+if (this.antidotoRojo == false) {
+  if (this.numeroAR < 2) {
+    this.numeroAR++;
+  } else {
+    this.antidotoRojo = true;
+  }
+}
+}else if (x == "blue") {
+if (this.antidotoAzul == false) {
+  if (this.numeroAB < 2) {
+    this.numeroAB++;
+  } else {
+    this.antidotoAzul = true;
+  }
+}
+}else if (x == "yellow") {
+if (this.antidotoAmarillo == false) {
+  if (this.numeroAY < 2) {
+    this.numeroAY++;
+  } else {
+    this.antidotoAmarillo = true;
+  }
+}
+}else{
+console.error("Antidoto invalido")
+}
 }
 
 

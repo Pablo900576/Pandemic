@@ -166,6 +166,13 @@ ul li {
   border: none;
   cursor: pointer;
 }
+.antidotos{
+display: flex;
+flex-direction: row;
+}
+.antidoto img{
+  height: 50px;
+}
 
 .vacunas img{
   height: 50px;
