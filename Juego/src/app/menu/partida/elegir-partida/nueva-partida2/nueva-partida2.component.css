@@ -76,7 +76,7 @@
   position: absolute;
   top: 50px;
   left: 50px;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: white;/*rgba(255, 255, 255, 0.5);*/
   color: rgb(0, 0, 0);
   padding: 15px;
   border-radius: 8px;
@@ -195,6 +195,7 @@ flex-direction: row;
   font-weight: bold;
   margin-top: 15px;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .example-dd {

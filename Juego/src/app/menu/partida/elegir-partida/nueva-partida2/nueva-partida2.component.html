@@ -19,7 +19,7 @@
   <cdk-virtual-scroll-viewport class="ciudadesInfectadas" itemSize="60">
     <dl class="example-dl">
       <div *ngFor="let ciudad of ciudadesInfectadas">
-        <dt class="example-dt">{{ciudad.name}}:</dt>
+        <dt class="example-dt" (click)="selectCity(ciudad)" >{{ciudad.name}}:</dt>
         <dd class="example-dd">
           <span *ngFor="let virus of obtenerVirus(ciudad.diseaseCount)">
             <div *ngIf="virus.cantidad==1" class="virus">
@@ -53,26 +53,29 @@
   </cdk-virtual-scroll-viewport>
 
   <div class="menu">
+    <div class="contador">
+      <strong>Ronda: {{numeroRonda}}</strong><button class="button-ronda" (click)="saltarRonda()">Saltar</button><br>
+      <strong>Acciones: {{accionesRonda}}</strong>
+    </div>
     <div class="controls">
       <button (click)="zoomIn()" id="botonZoomIn">+</button>
       <button (click)="zoomOut()" id="botonZoomOut">-</button>
     </div>
     <div class="antidotosGeneral">
-      <button (click)="sumar('blue')" *ngIf="antidotoAzul==false">Investigar antidoto azul</button>
-      <button (click)="sumar('green')" *ngIf="antidotoVerde==false">Investigar antidoto verde</button>
-      <button (click)="sumar('red')" *ngIf="antidotoRojo==false">Investigar antidoto rojo</button>
-      <button (click)="sumar('yellow')" *ngIf="antidotoAmarillo==false">Investigar antidoto amarillo</button>
-      <div class="antidotos">
-      <div class="antidoto" id="antidotoAzul" *ngIf="antidotoAzul && !pastillaB" ><img (click)='curar("blue")' src="/images/antidotoAzul.png"></div>
-      <div class="antidoto" id="antidotoRojo" *ngIf="antidotoRojo && !pastillaR"><img (click)='curar("red")' src="/images/antidotoRojo.png"></div>
-      <div class="antidoto" id="antidotoVerde" *ngIf="antidotoVerde && !pastillaG"><img (click)='curar("green")' src="/images/antidotoVerde.png"></div>
-      <div class="antidoto" id="antidotoAmarillo" *ngIf="antidotoAmarillo && !pastillaY"><img (click)='curar("yellow")' src="/images/antidotoAmarillo.png"></div>
+      <div class="investigaciones" *ngIf="accionesRonda>=3">
+        <button (click)="sumar('blue')" *ngIf="antidotoAzul==false">Investigar antidoto azul</button>
+        <button (click)="sumar('green')" *ngIf="antidotoVerde==false">Investigar antidoto verde</button>
+        <button (click)="sumar('red')" *ngIf="antidotoRojo==false">Investigar antidoto rojo</button>
+        <button (click)="sumar('yellow')" *ngIf="antidotoAmarillo==false">Investigar antidoto amarillo</button>
+      </div>
+      <div class="antidotos" *ngIf="accionesRonda>=3">
+        <div class="antidoto" id="antidotoAzul" *ngIf="antidotoAzul && !pastillaB" ><img (click)='curar("blue")' src="/images/antidotoAzul.png"></div>
+        <div class="antidoto" id="antidotoRojo" *ngIf="antidotoRojo && !pastillaR"><img (click)='curar("red")' src="/images/antidotoRojo.png"></div>
+        <div class="antidoto" id="antidotoVerde" *ngIf="antidotoVerde && !pastillaG"><img (click)='curar("green")' src="/images/antidotoVerde.png"></div>
+        <div class="antidoto" id="antidotoAmarillo" *ngIf="antidotoAmarillo && !pastillaY"><img (click)='curar("yellow")' src="/images/antidotoAmarillo.png"></div>
     </div>
     </div>
-    <div class="contador">
-      <strong>Ronda: {{numeroRonda}}</strong>
-      <button class="button-ronda" (click)="saltarRonda()">Saltar</button>
-    </div>
+    
 
     <button class="button-salir" routerLink="../../../">Salir</button>
     <div *ngIf="ciudadSeleccionada" class="city-info">
@@ -81,10 +84,10 @@
       <p><strong>Conectada a:</strong> {{ ciudadSeleccionada.connectedCities.join(', ') }}</p>
       <p><strong>Enfermedades:</strong></p>
       <ul>
-        <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"green")'><img src="/images/jeringaVerde.png"></button></li>
-        <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"red")'><img src="/images/jeringaRoja.png"></button></li>
-        <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"blue")'><img src="/images/jeringaAzul.png"></button></li>
-        <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}&nbsp;&nbsp;<button class="vacunas" (click)='vacunas(ciudadSeleccionada,"yellow")'><img src="/images/jeringaAmarilla.png"></button></li>
+        <li>Verde: {{ ciudadSeleccionada.diseaseCount.green }}&nbsp;&nbsp;<button class="vacunas" *ngIf="accionesRonda>=1" (click)='vacunas(ciudadSeleccionada,"green")'><img src="/images/jeringaVerde.png"></button></li>
+        <li>Rojo: {{ ciudadSeleccionada.diseaseCount.red }}&nbsp;&nbsp;<button class="vacunas" *ngIf="accionesRonda>=1" (click)='vacunas(ciudadSeleccionada,"red")'><img src="/images/jeringaRoja.png"></button></li>
+        <li>Azul: {{ ciudadSeleccionada.diseaseCount.blue }}&nbsp;&nbsp;<button class="vacunas" *ngIf="accionesRonda>=1" (click)='vacunas(ciudadSeleccionada,"blue")'><img src="/images/jeringaAzul.png"></button></li>
+        <li>Amarillo: {{ ciudadSeleccionada.diseaseCount.yellow }}&nbsp;&nbsp;<button class="vacunas" *ngIf="accionesRonda>=1" (click)='vacunas(ciudadSeleccionada,"yellow")'><img src="/images/jeringaAmarilla.png"></button></li>
       </ul>
       <button (click)="closeCityInfo()" class="button-cerrar">Cerrar</button>
     </div>

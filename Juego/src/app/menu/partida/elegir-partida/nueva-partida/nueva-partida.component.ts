@@ -31,6 +31,7 @@ export class NuevaPartidaComponent {
   startX: number = 0;
   startY: number = 0;
   ciudadesInfectadas: any[] = [];
+  accionesRonda=3;
 
   ngOnInit() {
     this.cargarCiudad.getCiudadesMundo().subscribe(response => {
@@ -204,6 +205,7 @@ export class NuevaPartidaComponent {
       const ciudadVacunar= this.ciudades.find(city=>city.name===ciudad.name);
       if(ciudadVacunar && ciudadVacunar.diseaseCount[virus]>0){
         ciudadVacunar.diseaseCount[virus]--;
+
         if(Object.values(ciudadVacunar.diseaseCount).every(virus=> virus===0)){
           const index = this.ciudadesInfectadas.findIndex(c => c.name === ciudadVacunar.name);
           if (index !== -1) {
@@ -211,6 +213,7 @@ export class NuevaPartidaComponent {
           }
         }
         console.log(`Vacuna aplicada a ${virus} en ${ciudadVacunar.name}`);
+        this.accionesRonda--;
       }else{
         console.error("Ciudad no encontrada o vacuna no aplicada");
       }
