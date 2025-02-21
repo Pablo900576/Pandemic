@@ -32,15 +32,17 @@ export class LoginComponent {
 
       this.authService.login(usuario).subscribe(
         response=> {
+          if(response.status=="success"){
             console.log("Usuario logeado.");
-            //this.router.navigate(['/menu']);
-
+            this.router.navigate(['/menu']);
             const usuarioCompleto: Usuario={
               nombre: response.nombre,
               nick: response.nick,
               email: usuario.email
             }
             this.perfilService.setUsuario(usuarioCompleto);
+          }
+            
           },
           error =>{
             console.error("Error al iniciar sesion:", error);

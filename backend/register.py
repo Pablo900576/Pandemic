@@ -1,4 +1,5 @@
 import mysql.connector
+import bcrypt
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -11,6 +12,14 @@ mydb = mysql.connector.connect(
   password="",
   database="pandemic"
 )
+
+def hashPw(password: str) -> str:
+  salt= bcrypt.gensalt()
+  pwHasheada = bcrypt.hashpw(password.encode('utf-8'), salt)
+  return pwHasheada.decode('utf-8')
+
+def verificarPw(password: str, hash: str):
+  return bcrypt.checkpw(password.encode('utf-8'), hash.encode('utf-8'))
 
 
 @app.route('/registro', methods=['POST'])
@@ -30,10 +39,12 @@ def registrarUsuario():
       return jsonify({"error": "Faltan datos!!"}), 400
 
 
-
+    pwHash= hashPw(password)
+    print(password)
+    print(pwHash)
     sql = "INSERT INTO usuarios (email, nombre, password, apellido, nick) values (%s, %s, %s, %s, %s)"
 
-    valores=(email, nombre, password, apellido, nick)
+    valores=(email, nombre, pwHash, apellido, nick)
 
     mycursor.execute(sql, valores)
 
@@ -50,8 +61,8 @@ def logearUsuario():
 
   try:
     data= request.json
-
     mycursor = mydb.cursor(dictionary=True)
+
     email=data.get("email")
     password=data.get("pw")
 
@@ -65,15 +76,25 @@ def logearUsuario():
 
 
     mycursor.execute(sql, (email,))
-
+    print(password)
     resultado= mycursor.fetchone()
-    for row in resultado:
-      print(resultado)
-      print("hola")
-
-
-   
-    return jsonify({"status": "success", "message": f"Se logeo correctamente a:  {email} "}), 201
+    print(resultado)
+    if resultado is not None:
+      nombre= resultado['nombre']
+      nick= resultado['nick']
+      print(nombre)
+      print(nick)
+      correcta= verificarPw(password, resultado['password'])
+      if correcta:
+        print("Logueado")
+        return jsonify({"status": "success", "message": f"Se logeo correctamente a:  {email} ", "nombre": nombre, "nick": nick, "email": email}), 201
+      
+      else: 
+        print("No logueado")
+        return jsonify({"status": "error", "message": "Error al loguear" }), 401
+    else:
+      print("No logueado, no encontrado")
+      return jsonify({"status":"error", "message": "Usuario no encontrado" }), 402
 
   except Exception as ex:
     return jsonify({"error": str(ex)}), 500
