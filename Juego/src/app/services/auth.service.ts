@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Usuario} from '../models/usuarios.model';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -8,17 +8,18 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl='http://localhost/';
+  private apiUrl='http://localhost:5000/';
   usuarioActual = new BehaviorSubject<Usuario | null>(null); 
-
 
   constructor(private http: HttpClient) { }
 
   login(login: Usuario):Observable<any>{
-  return this.http.post(this.apiUrl+'inicio.php', JSON.stringify(login));
+  const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  return this.http.post(`${this.apiUrl}login`, JSON.stringify(login), {headers});
   }
   register(register: Usuario):Observable<any>{
-    return this.http.post(this.apiUrl+'insertar_usuario.php', JSON.stringify(register));
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(`${this.apiUrl}/registro`, JSON.stringify(register), {headers});
   }
   setUsuario(usuario: Usuario): void {
     this.usuarioActual.next(usuario); 

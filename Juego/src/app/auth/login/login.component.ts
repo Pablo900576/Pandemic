@@ -33,7 +33,7 @@ export class LoginComponent {
       this.authService.login(usuario).subscribe(
         response=> {
             console.log("Usuario logeado.");
-            this.router.navigate(['/menu']);
+            //this.router.navigate(['/menu']);
 
             const usuarioCompleto: Usuario={
               nombre: response.nombre,
