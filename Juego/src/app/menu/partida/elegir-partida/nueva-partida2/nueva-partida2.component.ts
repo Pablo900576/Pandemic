@@ -21,7 +21,7 @@ type Virus = "green" | "red" | "blue" | "yellow";
 export class NuevaPartida2Component {
 
   constructor(private perfilService: PerfilService, private partidaService: AuthService, private cargarCiudad: CargarCiudadesService, private router: Router) {
-    this.usuario= this.perfilService.usuarioActual;
+
   }
   //Variables para todo el documento
   usuario: Usuario;
@@ -84,12 +84,13 @@ export class NuevaPartida2Component {
       this.ciudades = response
       this.virusIniciales();
       console.table(this.ciudadesInfectadas);
+      console.log(this.usuario)
      // this.crearNuevaPartida();
     })
 
   }
 
-  crearNuevaPartida(){
+  /*crearNuevaPartida(){
     this.partidaService.nuevaPartida(this.usuario.email, this.ciudades).subscribe(
       (response) =>{
         console.log("Respuesta del servidor: ", response);
@@ -99,7 +100,7 @@ export class NuevaPartida2Component {
       }
     );
   }
-
+*/
   ciudadSeleccionada: any = null;
   selectCity(ciudad: any) {
     this.ciudadSeleccionada = ciudad;

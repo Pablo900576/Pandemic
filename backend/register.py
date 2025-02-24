@@ -88,7 +88,12 @@ def logearUsuario():
       correcta= verificarPw(password, resultado['password'])
       if correcta:
         print("Logueado")
-        return jsonify({"status": "success", "message": f"Se logeo correctamente a:  {email} ", "nombre": nombre, "nick": nick, "email": email}), 201
+        return jsonify({
+          "status": "success", 
+          "message": f"Se logeo correctamente a:  {email} ", 
+          "nombre": nombre, 
+          "nick": nick, 
+          "email": email}), 200
       
       else: 
         print("No logueado")

@@ -70,7 +70,11 @@ body{
   .sections {
     padding: 1.5rem;
   }
-  
+  .cerrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .section {
     margin-bottom: 1.5rem;
   }

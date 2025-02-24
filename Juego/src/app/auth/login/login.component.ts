@@ -34,13 +34,15 @@ export class LoginComponent {
         response=> {
           if(response.status=="success"){
             console.log("Usuario logeado.");
-            this.router.navigate(['/menu']);
+
             const usuarioCompleto: Usuario={
               nombre: response.nombre,
               nick: response.nick,
               email: usuario.email
             }
-            this.perfilService.setUsuario(usuarioCompleto);
+            this.authService.setUserData(response);
+            
+            this.router.navigate(['/menu']);
           }
             
           },
