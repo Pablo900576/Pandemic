@@ -10,7 +10,7 @@ import { Ciudad } from '../models/ciudades.model';
 export class AuthService {
 
   private apiUrl='http://localhost:5000/';
-  usuarioActual = new BehaviorSubject<Usuario | null>(null); 
+  usuarioActual = new BehaviorSubject<Usuario | null>(this.getUserFromStorage());
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +26,30 @@ export class AuthService {
     return this.http.post(`${this.apiUrl}/nuevaPartida`, {email, ciudades});
   }
   setUsuario(usuario: Usuario): void {
-    this.usuarioActual.next(usuario); 
+    this.usuarioActual.next(usuario);
+    localStorage.setItem('user', JSON.stringify(usuario)); // Guardamos en localStorage
+  }
+
+  /** ✅ Recupera el usuario desde localStorage */
+  private getUserFromStorage(): Usuario | null {
+    const userData = localStorage.getItem('user');
+    return userData ? JSON.parse(userData) : null;
+  }
+
+  /** ✅ Método para obtener el usuario actual como observable */
+  getUsuarioActual(): Observable<Usuario | null> {
+    return this.usuarioActual.asObservable();
+  }
+
+  /** ✅ Cierra sesión eliminando los datos */
+  logout(): void {
+    this.usuarioActual.next(null);
+    localStorage.removeItem('user');
+  }
+
+  /** ✅ Saber si hay un usuario logueado */
+  isLoggedIn(): boolean {
+    return this.usuarioActual.value !== null;
   }
 
 }
