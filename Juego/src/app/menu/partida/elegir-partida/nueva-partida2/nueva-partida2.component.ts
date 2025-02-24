@@ -18,8 +18,8 @@ type Virus = "green" | "red" | "blue" | "yellow";
 export class NuevaPartida2Component {
 
   constructor(private cargarCiudad: CargarCiudadesService, private router: Router) {
-
   }
+
   //Variables para todo el documento
 
   ciudades: Ciudad[] = [];

@@ -63,10 +63,10 @@
     </div>
     <div class="antidotosGeneral">
       <div class="investigaciones" *ngIf="accionesRonda>=3">
-        <button (click)="sumar('blue')" *ngIf="antidotoAzul==false">Investigar antidoto azul</button>
-        <button (click)="sumar('green')" *ngIf="antidotoVerde==false">Investigar antidoto verde</button>
-        <button (click)="sumar('red')" *ngIf="antidotoRojo==false">Investigar antidoto rojo</button>
-        <button (click)="sumar('yellow')" *ngIf="antidotoAmarillo==false">Investigar antidoto amarillo</button>
+        <button (click)="sumar('blue')" *ngIf="antidotoAzul==false"><img src="/images/investigacion.png"><p>Azul</p></button>
+        <button (click)="sumar('green')" *ngIf="antidotoVerde==false"><img src="/images/investigacion.png"><p>Verde</p></button>
+        <button (click)="sumar('red')" *ngIf="antidotoRojo==false"><img src="/images/investigacion.png"><p>Rojo</p></button>
+        <button (click)="sumar('yellow')" *ngIf="antidotoAmarillo==false"><img src="/images/investigacion.png"><p>Amarillo</p></button>
       </div>
       <div class="antidotos" *ngIf="accionesRonda>=3">
         <div class="antidoto" id="antidotoAzul" *ngIf="antidotoAzul && !pastillaB" ><img (click)='curar("blue")' src="/images/antidotoAzul.png"></div>
