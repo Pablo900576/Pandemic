@@ -214,3 +214,14 @@ flex-direction: row;
   object-fit: contain;
 }
 
+.investigaciones{
+  display: inline-block;
+  flex-direction: column;
+  padding: 0;
+}
+
+.investigaciones img{
+  height: 5vh;
+  margin: 0;
+}
+

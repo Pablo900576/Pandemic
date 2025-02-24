@@ -12,6 +12,7 @@ export class AuthService {
   private apiUrl = 'http://localhost:5000/';  // 
 
 
+
   usuarioActual = new BehaviorSubject<Usuario | null>(this.getUserData());
 
   constructor(private http: HttpClient, private router: Router) {}

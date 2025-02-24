@@ -23,6 +23,7 @@ export class NuevaPartida2Component {
   constructor(private perfilService: PerfilService, private partidaService: AuthService, private cargarCiudad: CargarCiudadesService, private router: Router) {
 
   }
+
   //Variables para todo el documento
   usuario: Usuario;
 

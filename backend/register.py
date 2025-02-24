@@ -77,14 +77,13 @@ def logearUsuario():
 
 
     mycursor.execute(sql, (email,))
-    print(password)
+
     resultado= mycursor.fetchone()
-    print(resultado)
+
     if resultado is not None:
       nombre= resultado['nombre']
       nick= resultado['nick']
-      print(nombre)
-      print(nick)
+
       correcta= verificarPw(password, resultado['password'])
       if correcta:
         print("Logueado")
@@ -96,6 +95,7 @@ def logearUsuario():
           "email": email}), 200
       
       else: 
+        print(resultado)
         print("No logueado")
         return jsonify({"status": "error", "message": "Error al loguear" }), 401
     else:
