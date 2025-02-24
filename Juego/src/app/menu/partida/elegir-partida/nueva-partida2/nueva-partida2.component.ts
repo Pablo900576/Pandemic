@@ -4,6 +4,9 @@ import { Ciudad } from '../../../../models/ciudades.model';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { AuthService } from 'src/app/services/auth.service';
+import { PerfilService } from 'src/app/services/perfil.service';
+import { Usuario } from 'src/app/models/usuarios.model';
 
 
 type Virus = "green" | "red" | "blue" | "yellow";
@@ -17,10 +20,11 @@ type Virus = "green" | "red" | "blue" | "yellow";
 })
 export class NuevaPartida2Component {
 
-  constructor(private cargarCiudad: CargarCiudadesService, private router: Router) {
-
+  constructor(private perfilService: PerfilService, private partidaService: AuthService, private cargarCiudad: CargarCiudadesService, private router: Router) {
+    this.usuario= this.perfilService.usuarioActual;
   }
   //Variables para todo el documento
+  usuario: Usuario;
 
   ciudades: Ciudad[] = [];
 
@@ -79,9 +83,21 @@ export class NuevaPartida2Component {
     this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
       this.ciudades = response
       this.virusIniciales();
-      console.table(this.ciudadesInfectadas)
+      console.table(this.ciudadesInfectadas);
+     // this.crearNuevaPartida();
     })
 
+  }
+
+  crearNuevaPartida(){
+    this.partidaService.nuevaPartida(this.usuario.email, this.ciudades).subscribe(
+      (response) =>{
+        console.log("Respuesta del servidor: ", response);
+      },
+      (error)=>{
+        console.error("Error al crear la partida: ", error)
+      }
+    );
   }
 
   ciudadSeleccionada: any = null;
