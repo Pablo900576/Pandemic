@@ -218,6 +218,7 @@ flex-direction: row;
   display: inline-block;
   flex-direction: column;
   padding: 0;
+  background: none;
 }
 
 .investigaciones img{
