@@ -40,11 +40,9 @@ export class LoginComponent {
               nick: response.nick,
               email: usuario.email
             }
-
             this.authService.setUserData(response);
             
             this.router.navigate(['/menu']);
-
           }
             
           },

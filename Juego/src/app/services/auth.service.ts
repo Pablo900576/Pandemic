@@ -20,13 +20,13 @@ export class AuthService {
   // Iniciar sesión
   login(login: Usuario): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(`${this.apiUrl}login`, JSON.stringify(login), { headers });
+    return this.http.post(`${this.apiUrl}auth/login`, JSON.stringify(login), { headers });
   }
 
   // Registrar usuario
   register(register: Usuario): Observable<any> {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-    return this.http.post(`${this.apiUrl}registro`, JSON.stringify(register), { headers });
+    return this.http.post(`${this.apiUrl}auth/registro`, JSON.stringify(register), { headers });
   }
 
   // Guardar usuario en el BehaviorSubject y en localStorage

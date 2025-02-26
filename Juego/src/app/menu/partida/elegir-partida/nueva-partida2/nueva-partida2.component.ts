@@ -21,7 +21,11 @@ type Virus = "green" | "red" | "blue" | "yellow";
 export class NuevaPartida2Component {
 
   constructor(private perfilService: PerfilService, private partidaService: AuthService, private cargarCiudad: CargarCiudadesService, private router: Router) {
-
+    if(this.perfilService.isLoggedIn()){
+      this.usuario= perfilService.getUserData()!;
+    }else{
+        console.log("Sin loguear")
+    }
   }
 
   //Variables para todo el documento
