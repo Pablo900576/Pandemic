@@ -7,6 +7,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { AuthService } from 'src/app/services/auth.service';
 import { PerfilService } from 'src/app/services/perfil.service';
 import { Usuario } from 'src/app/models/usuarios.model';
+import { PartidaService } from 'src/app/services/partida.service';
 
 
 type Virus = "green" | "red" | "blue" | "yellow";
@@ -20,7 +21,7 @@ type Virus = "green" | "red" | "blue" | "yellow";
 })
 export class NuevaPartida2Component {
 
-  constructor(private perfilService: PerfilService, private partidaService: AuthService, private cargarCiudad: CargarCiudadesService, private router: Router) {
+  constructor(private perfilService: PerfilService, private partidaService: PartidaService, private cargarCiudad: CargarCiudadesService, private router: Router) {
     if(this.perfilService.isLoggedIn()){
       this.usuario= perfilService.getUserData()!;
     }else{
@@ -82,18 +83,51 @@ export class NuevaPartida2Component {
   pastillaY = false;
   
   pastillaG = false;
-
+  partida_id: number;
 
   ngOnInit() {
     this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
       this.ciudades = response
       this.virusIniciales();
-      console.table(this.ciudadesInfectadas);
-      console.log(this.usuario)
-     // this.crearNuevaPartida();
     })
 
   }
+
+  obtenerIdPartida(){
+    this.partidaService.obtenerIdPartida(this.usuario.email!).subscribe({
+      next: (response)=>{
+        this.partida_id= response.partida_id;
+        console.log(response)
+        console.log(this.partida_id)
+        this.guardarPartida();
+      },
+      error: (error)=>{
+        console.error("Error al obtener el id de la partida maquina: ", error)
+      }
+    })
+  }
+  
+
+  guardarPartida(){
+  
+
+      const ciudades = this.ciudades.map(ciudad => ({
+        name: ciudad.name,
+        diseaseCount: ciudad.diseaseCount,
+        brotes: ciudad.brotes,
+      }));
+
+      this.partidaService.guardarPartida(this.partida_id, ciudades, this.numeroRonda).subscribe({
+        next: (response) => {
+          console.log("Estado guardado:", response);
+        },
+        error: (error) => {
+          console.error("Error al guardar el estado:", error);
+        }
+      });
+    
+  }
+
 
   /*crearNuevaPartida(){
     this.partidaService.nuevaPartida(this.usuario.email, this.ciudades).subscribe(

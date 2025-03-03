@@ -1,0 +1,9 @@
+<div class="general">
+    <h2>Selecciona una Partida</h2>
+<ul>
+  <li *ngFor="let partida of partidas">
+    <span>Partida ID: {{ partida.id }} - Fecha: {{ partida.fecha_inicio }}</span>
+    <button (click)="seleccionarPartida(partida.id)">Cargar</button>
+  </li>
+</ul>
+</div>
