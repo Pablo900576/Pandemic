@@ -4,18 +4,24 @@
         <h4>Recuerda que cada uno te ayudará a su manera, asique escoge bien</h4>
     </div>
     <div class="personajes-container">
-        <button class="personaje" id="p1" routerLink="../elegirPartida">
+        <button class="personaje" id="p1" routerLink="../elegirPartida" (click)="seleccionPersonaje(5,3)">
             <img src="/images/personajeMago.png">
         </button>
-        <button class="personaje" id="p2" routerLink="../elegirPartida">
+        <button class="personaje" id="p2" routerLink="../elegirPartida" (click)="seleccionPersonaje(6,2)">
             <img src="/images/personajeLadron.png">
         </button>
-        <button class="personaje" id="p3" routerLink="../elegirPartida">
+        <button class="personaje" id="p3" routerLink="../elegirPartida" (click)="seleccionPersonaje(3,5)">
             <img src="/images/personajeGuerrero.png">
         </button>
-        <button class="personaje" id="p4" routerLink="../elegirPartida">
+        <button class="personaje" id="p4" routerLink="../elegirPartida" (click)="seleccionPersonaje(4,4)">
             <img src="/images/personajeCurandero.png">
         </button>
     </div>
     <div class="nombres"><strong>Mago</strong><strong>Ladrón</strong><strong>Guerrero</strong><strong>Curandero</strong></div>
+    <div class="leyenda">
+        <div>Mago: 5 virus iniciales y 3 por ronda</div>
+        <div>Ladron: 6 virus iniciales y 2 por ronda</div>
+        <div>Guerrero: 3 virus iniciales y 5 por ronda</div>
+        <div>Curandero: 4 virus iniciales y 4 por ronda</div>
+    </div>
 </div>

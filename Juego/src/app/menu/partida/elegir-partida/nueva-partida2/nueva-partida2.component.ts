@@ -24,12 +24,13 @@ export class NuevaPartida2Component {
   constructor(private perfilService: PerfilService, private partidaService: PartidaService, private cargarCiudad: CargarCiudadesService, private router: Router) {
     if(this.perfilService.isLoggedIn()){
       this.usuario= perfilService.getUserData()!;
+      this.personajes();
     }else{
         console.log("Sin loguear")
     }
   }
 
-  //Variables para todo el documento
+
   usuario: Usuario;
 
   ciudades: Ciudad[] = [];
@@ -86,10 +87,14 @@ export class NuevaPartida2Component {
   partida_id: number;
 
   ngOnInit() {
+    if(this.partida_id){
+
+    }else{
+
     this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
       this.ciudades = response
       this.virusIniciales();
-    })
+    })}
 
   }
 
@@ -105,6 +110,17 @@ export class NuevaPartida2Component {
         console.error("Error al obtener el id de la partida maquina: ", error)
       }
     })
+  }
+
+  personajes(){
+    const virus1= this.partidaService.getDatosPersonajes().virusIniciales;
+    const virus2=this.partidaService.getDatosPersonajes().virusRonda;
+    if(virus1 && virus2){
+    this.cantidadInicial=this.partidaService.getDatosPersonajes().virusIniciales;
+    this.cantidadRonda= this.partidaService.getDatosPersonajes().virusRonda;
+    }else{
+      console.log("No hay personaje seleccionado")
+    }
   }
   
 

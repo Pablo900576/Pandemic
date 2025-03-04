@@ -79,6 +79,7 @@ def guardarEstado():
             brote_rojo = %s, brote_verde = %s, brote_azul = %s, brote_amarillo = %s
         WHERE partida_id = %s AND ciudad = %s
     """
+    sql="update partidas set numero_ronda= %s where id = %s"
 
     for ciudad in ciudades:
         mycursor.execute(sql_update, (
@@ -93,6 +94,7 @@ def guardarEstado():
             partida_id,
             ciudad["name"]
         ))
+        mycursor.execute(sql,(numeroRonda, partida_id))
 
     mydb.commit()
     return jsonify({"status": "success", "message": "Estado de la partida guardado"}), 200
@@ -108,13 +110,16 @@ def cargarPartida(partida_id):
                brote_rojo, brote_verde, brote_azul, brote_amarillo
         FROM estado_ciudades WHERE partida_id = %s
     """
-    
+    sql2="select numero_ronda from partidas where id = %s"
     mycursor.execute(sql, (partida_id,))
     ciudades_estado = mycursor.fetchall()
 
     if not ciudades_estado:
         return jsonify({"error": "No se encontró la partida"}), 404
 
+    mycursor.execute(sql2,(partida_id,))
+    numeroRonda= mycursor.fetchone()
+    print(numeroRonda)
     # Transformar los datos al formato esperado
     ciudades_formateadas = []
     for ciudad in ciudades_estado:
@@ -134,7 +139,7 @@ def cargarPartida(partida_id):
             }
         })
 
-    return jsonify({"status": "success", "partida_id": partida_id, "ciudades_estado": ciudades_formateadas}), 200
+    return jsonify({"status": "success", "partida_id": partida_id, "ciudades_estado": ciudades_formateadas, "numeroRonda": numeroRonda}), 200
 
 
 @game_routes.route('/listarPartidas/<string:email>', methods=['GET'])

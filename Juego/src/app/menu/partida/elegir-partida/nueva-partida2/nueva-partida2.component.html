@@ -54,7 +54,8 @@
 
   <div class="menu">
     <div class="contador">
-      <button (click)="obtenerIdPartida()">Guardar Partida</button>
+      <button (click)="obtenerIdPartida()">Guardar Partida</button><br>
+      <button routerLink="../../elegirPersonaje">Cambiar personaje</button><br>
       <strong>Ronda: {{numeroRonda}}</strong><button class="button-ronda" (click)="saltarRonda()">Saltar</button><br>
       <strong>Acciones: {{accionesRonda}}</strong>
     </div>

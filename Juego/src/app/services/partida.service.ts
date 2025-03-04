@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class PartidaService {
 
   private apiURL= 'http://localhost:5000/'
+  private virusIniciales=0;
+  private virusRonda=0;
   constructor(private http: HttpClient) {}
 
   crearPartida(email: string, ciudades: any[]):Observable<any>{
@@ -32,5 +34,14 @@ export class PartidaService {
     return this.http.get(`${this.apiURL}game/obtenerPartida/${email}`)
   }
 
+
+  setDartosPersonajes(virusIniciales: number, virusRonda: number){
+    this.virusIniciales= virusIniciales;
+    this.virusRonda= virusRonda
+  }
+
+  getDatosPersonajes(){
+    return{ virusIniciales: this.virusIniciales, virusRonda: this.virusRonda};
+  }
 
 }
