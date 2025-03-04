@@ -10,6 +10,8 @@ export class PartidaService {
   private apiURL= 'http://localhost:5000/'
   private virusIniciales=0;
   private virusRonda=0;
+  private STORAGE_KEY = 'partidaGuardada';
+
   constructor(private http: HttpClient) {}
 
   crearPartida(email: string, ciudades: any[]):Observable<any>{
@@ -17,14 +19,27 @@ export class PartidaService {
   }
 
   guardarPartida(partida_id: number, ciudades: any[], numeroRonda: number): Observable<any> {
+    const partida = { partida_id, ciudades, numeroRonda };
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(partida));
+    console.log("Partida guardada en localStorage");
+    
     return this.http.post(`${this.apiURL}game/guardarPartida`, { partida_id, ciudades, numeroRonda });
   }
 
-
   cargarPartida(partida_id: number): Observable<any> {
-    return this.http.get(`${this.apiURL}game/cargarPartida/${partida_id}`);
-  }
+    const partidaGuardada = localStorage.getItem(this.STORAGE_KEY);
 
+    if (partidaGuardada) {
+      console.log("Partida cargada desde localStorage");
+      return new Observable(observer => {
+        observer.next(JSON.parse(partidaGuardada)); 
+        observer.complete();
+      });
+    } else {
+      console.log("Cargando partida desde el servidor");
+      return this.http.get(`${this.apiURL}game/cargarPartida/${partida_id}`);
+    }
+  }
 
   listarPartidas(email: string): Observable<any> {
     return this.http.get(`${this.apiURL}game/listarPartidas/${email}`);
@@ -42,6 +57,11 @@ export class PartidaService {
 
   getDatosPersonajes(){
     return{ virusIniciales: this.virusIniciales, virusRonda: this.virusRonda};
+  }
+
+  reiniciarPartida(): void {
+    localStorage.removeItem(this.STORAGE_KEY);
+    console.log("Partida eliminada del localStorage");
   }
 
 }

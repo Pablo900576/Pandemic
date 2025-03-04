@@ -11,10 +11,6 @@ $usuario=json_decode($json);
 $email = $usuario->email;
 $pw = $usuario->pw;
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'pandemic';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

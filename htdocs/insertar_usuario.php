@@ -17,10 +17,6 @@ $nick= $usuario->nick;
 
 $hash= password_hash($pw, PASSWORD_BCRYPT);
 
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'pandemic';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

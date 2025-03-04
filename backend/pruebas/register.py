@@ -59,51 +59,52 @@ def registrarUsuario():
 
 @app.route('/login', methods=['POST'])
 def logearUsuario():
+    try:
+        data = request.json
+        mycursor = mydb.cursor(dictionary=True)
 
-  try:
-    data= request.json
-    mycursor = mydb.cursor(dictionary=True)
+        email = data.get("email")
+        password = data.get("pw")
 
-    email=data.get("email")
-    password=data.get("pw")
+        if not all([email, password]):
+            return jsonify({"error": "Faltan datos!!"}), 400
 
+        sql = "SELECT email, password, nombre, nick FROM usuarios WHERE email = %s"
+        mycursor.execute(sql, (email,))
+        resultado = mycursor.fetchone()
 
-    if not all([email,password]):
-      return jsonify({"error": "Faltan datos!!"}), 400
+        if resultado is not None:
+            print("🔍 Usuario encontrado:", resultado)  # Ver qué datos trae la BD
 
+            nombre = resultado['nombre']
+            nick = resultado['nick']
+            password_en_bd = resultado['password']
 
+            print(f"🔐 Contraseña ingresada: {password}")
+            print(f"🔐 Contraseña en BD: {password_en_bd}")
 
-    sql = "select email, password, nombre, nick from usuarios where email = %s"
+            correcta = verificarPw(password, password_en_bd)
 
+            if correcta:
+                print("✅ Logueado correctamente")
+                return jsonify({
+                    "status": "success",
+                    "message": f"Se logueó correctamente a: {email}",
+                    "nombre": nombre,
+                    "nick": nick,
+                    "email": email
+                }), 200
 
-    mycursor.execute(sql, (email,))
+            else:
+                print("❌ Contraseña incorrecta")
+                return jsonify({"status": "error", "message": "Error al loguear"}), 401
 
-    resultado= mycursor.fetchone()
+        else:
+            print("❌ Usuario no encontrado")
+            return jsonify({"status": "error", "message": "Usuario no encontrado"}), 402
 
-    if resultado is not None:
-      nombre= resultado['nombre']
-      nick= resultado['nick']
-
-      correcta= verificarPw(password, resultado['password'])
-      if correcta:
-        print("Logueado")
-        return jsonify({
-          "status": "success", 
-          "message": f"Se logeo correctamente a:  {email} ", 
-          "nombre": nombre, 
-          "nick": nick, 
-          "email": email}), 200
-      
-      else: 
-        print(resultado)
-        print("No logueado")
-        return jsonify({"status": "error", "message": "Error al loguear" }), 401
-    else:
-      print("No logueado, no encontrado")
-      return jsonify({"status":"error", "message": "Usuario no encontrado" }), 402
-
-  except Exception as ex:
-    return jsonify({"error": str(ex)}), 500
+    except Exception as ex:
+        return jsonify({"error": str(ex)}), 500
   
 
 

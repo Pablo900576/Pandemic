@@ -54,10 +54,23 @@
 
   <div class="menu">
     <div class="contador">
-      <button (click)="obtenerIdPartida()">Guardar Partida</button><br>
+      <button (click)="obtenerIdPartida()">Guardar</button>&nbsp;&nbsp;<button (click)="reiniciarPartida()">Reiniciar</button><br>
       <button routerLink="../../elegirPersonaje">Cambiar personaje</button><br>
       <strong>Ronda: {{numeroRonda}}</strong><button class="button-ronda" (click)="saltarRonda()">Saltar</button><br>
       <strong>Acciones: {{accionesRonda}}</strong>
+    </div>
+    <div class="perfil">
+      <img (click)="abrirPerfil()" src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/e40b6ea6361a1abe28f32e7910f63b66/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg">
+    </div>
+    <div class="ventanaPerfil" *ngIf="perfilAbierto">
+      <div class="ventana-contenido">
+        <span class="cerrar-perfil" (click)="cerrarPerfil()">X</span>
+        <h2>Perfil de Usuario</h2>
+        <img class="perfil-img"
+          src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/e40b6ea6361a1abe28f32e7910f63b66/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg">
+        <p><strong>Nombre:</strong> {{ nombre }}</p>
+        <p><strong>Nick:</strong> {{ nick }}</p>
+      </div>
     </div>
     <div class="controls">
       <button (click)="zoomIn()" id="botonZoomIn">+</button>

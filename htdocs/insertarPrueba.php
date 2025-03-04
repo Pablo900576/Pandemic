@@ -7,11 +7,6 @@ header('Content-Type: aplication/json');
 
 $json= file_get_contents('php://input');
 
-$usuario=json_decode($json);
-$servername = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'pandemic';
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

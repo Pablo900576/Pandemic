@@ -22,16 +22,20 @@ type Virus = "green" | "red" | "blue" | "yellow";
 export class NuevaPartida2Component {
 
   constructor(private perfilService: PerfilService, private partidaService: PartidaService, private cargarCiudad: CargarCiudadesService, private router: Router) {
-    if(this.perfilService.isLoggedIn()){
-      this.usuario= perfilService.getUserData()!;
+    if (this.perfilService.isLoggedIn()) {
+      this.usuario = perfilService.getUserData()!;
       this.personajes();
-    }else{
-        console.log("Sin loguear")
+    } else {
+      console.log("Sin loguear");
     }
   }
 
 
   usuario: Usuario;
+
+  avatarUrl: string = "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/e40b6ea6361a1abe28f32e7910f63b66/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg";
+  nombre: string= "Sin nombre"
+  nick: string="Player8123947"
 
   ciudades: Ciudad[] = [];
 
@@ -78,72 +82,96 @@ export class NuevaPartida2Component {
   numeroAY = 0;
 
   pastillaR = false;
-  
+
   pastillaB = false;
-  
+
   pastillaY = false;
-  
+
   pastillaG = false;
+
   partida_id: number;
 
+  private STORAGE_KEY = 'partidaGuardada';
+
   ngOnInit() {
-    if(this.partida_id){
-
-    }else{
-
-    this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
-      this.ciudades = response
-      this.virusIniciales();
-    })}
+    const partidaGuardada = localStorage.getItem(this.STORAGE_KEY);
+    if (partidaGuardada) {
+      console.log("Cargando partida desde localStorage");
+      const partida = JSON.parse(partidaGuardada);
+      this.partida_id = partida.partida_id;
+      this.ciudades = partida.ciudades;
+      this.numeroRonda = partida.numeroRonda;
+    } else {
+      console.log("No hay partida en localStorage, cargando desde API");
+      this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
+        this.ciudades = response
+        this.virusIniciales();
+      })
+    }
 
   }
 
-  obtenerIdPartida(){
+  obtenerIdPartida() {
     this.partidaService.obtenerIdPartida(this.usuario.email!).subscribe({
-      next: (response)=>{
-        this.partida_id= response.partida_id;
+      next: (response) => {
+        this.partida_id = response.partida_id;
         console.log(response)
         console.log(this.partida_id)
         this.guardarPartida();
       },
-      error: (error)=>{
+      error: (error) => {
         console.error("Error al obtener el id de la partida maquina: ", error)
       }
     })
   }
 
-  personajes(){
-    const virus1= this.partidaService.getDatosPersonajes().virusIniciales;
-    const virus2=this.partidaService.getDatosPersonajes().virusRonda;
-    if(virus1 && virus2){
-    this.cantidadInicial=this.partidaService.getDatosPersonajes().virusIniciales;
-    this.cantidadRonda= this.partidaService.getDatosPersonajes().virusRonda;
-    }else{
+  personajes() {
+    const { virusIniciales, virusRonda } = this.partidaService.getDatosPersonajes();
+    if (virusIniciales && virusRonda) {
+      this.cantidadInicial = virusIniciales;
+      this.cantidadRonda = virusRonda;
+    } else {
       console.log("No hay personaje seleccionado")
     }
   }
-  
 
-  guardarPartida(){
-  
+  guardarPartida() {
+    const ciudades = this.ciudades.map(ciudad => ({
+      name: ciudad.name,
+      diseaseCount: ciudad.diseaseCount,
+      brotes: ciudad.brotes,
+    }));
 
-      const ciudades = this.ciudades.map(ciudad => ({
-        name: ciudad.name,
-        diseaseCount: ciudad.diseaseCount,
-        brotes: ciudad.brotes,
-      }));
+    const partida = { partida_id: this.partida_id, ciudades, numeroRonda: this.numeroRonda };
+    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(partida));
+    console.log("Partida guardada en localStorage");
 
-      this.partidaService.guardarPartida(this.partida_id, ciudades, this.numeroRonda).subscribe({
-        next: (response) => {
-          console.log("Estado guardado:", response);
-        },
-        error: (error) => {
-          console.error("Error al guardar el estado:", error);
-        }
-      });
-    
+    this.partidaService.guardarPartida(this.partida_id, ciudades, this.numeroRonda).subscribe({
+      next: (response) => {
+        console.log("Estado guardado:", response);
+      },
+      error: (error) => {
+        console.error("Error al guardar el estado:", error);
+      }
+    });
+
   }
 
+  reiniciarPartida() {
+    localStorage.removeItem(this.STORAGE_KEY);
+    console.log("Partida eliminada del localStorage");
+    window.location.reload();
+  }
+
+  perfilAbierto: boolean = false;
+
+  abrirPerfil() {
+    this.perfilAbierto = true;
+  }
+
+  cerrarPerfil() {
+    this.perfilAbierto = false;
+  }
 
   /*crearNuevaPartida(){
     this.partidaService.nuevaPartida(this.usuario.email, this.ciudades).subscribe(
@@ -228,7 +256,7 @@ export class NuevaPartida2Component {
 
   saltarRonda() {
     this.numeroRonda++;
-    this.accionesRonda=3;
+    this.accionesRonda = 3;
     this.virus(this.cantidadRonda);
     this.resultadoPartida();
     console.log(",");
@@ -418,7 +446,7 @@ export class NuevaPartida2Component {
         } else {
           this.antidotoAmarillo = true;
         }
-        
+
       }
     } else {
       console.error("Antidoto invalido")

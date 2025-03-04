@@ -39,10 +39,70 @@
   /* Evita interferencias en eventos */
 }
 
+.perfil img {
+  position: absolute;
+  top: 7%;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: solid 1px black;
+  transition: transform 0.3s;
+}
+
+.perfil img:hover {
+  transform: scale(1.1);
+}
+
+/* Estilos de la ventana */
+.ventanaPerfil {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ventana-contenido {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+}
+
+.ventana-contenido h2 {
+  margin-top: 0;
+}
+
+.ventana-contenido p {
+  margin: 5px 0;
+}
+
+.perfil-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+
+.cerrar-perfil {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 25px;
+  cursor: pointer;
+}
 
 .controls {
   position: absolute;
-  top: 10%;
+  top: 35%;
   right: 30px;
   display: flex;
   gap: 10px;
