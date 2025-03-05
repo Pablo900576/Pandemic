@@ -54,9 +54,8 @@
 
   <div class="menu">
     <div class="contador">
-      <button (click)="obtenerIdPartida()">Guardar</button>&nbsp;&nbsp;<button (click)="reiniciarPartida()">Reiniciar</button><br>
-      <button routerLink="../../elegirPersonaje">Cambiar personaje</button><br>
-      <strong>Ronda: {{numeroRonda}}</strong><button class="button-ronda" (click)="saltarRonda()">Saltar</button><br>
+      <p><button class="button-ronda" (click)="obtenerIdPartida()">Guardar</button>&nbsp;&nbsp;<button class="button-ronda" (click)="reiniciarPartida()">Reiniciar</button></p>
+      <p><strong>Ronda: {{numeroRonda}}</strong><br><button class="button-ronda" (click)="saltarRonda()">Saltar</button></p>
       <strong>Acciones: {{accionesRonda}}</strong>
     </div>
     <div class="perfil">
@@ -69,7 +68,8 @@
         <img class="perfil-img"
           src="https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/e40b6ea6361a1abe28f32e7910f63b66/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg">
         <p><strong>Nombre:</strong> {{ usuario.nombre}}</p>
-        <p><strong>Nick:</strong> {{ usuario.nick }}</p>
+        <p><strong>Nick:</strong> {{ usuario.nick }}</p><br>
+        <button class="button-ronda" routerLink="../../elegirPersonaje">Personaje</button>
       </div>
     </div>
     <div class="controls">
