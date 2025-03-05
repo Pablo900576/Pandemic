@@ -74,13 +74,14 @@
   position: absolute;
   top: 50px;
   left: 500px;
-  background-color: white;/*rgba(255, 255, 255, 0.5);*/
+  background-color: white;
   color: rgb(0, 0, 0);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
   width: 300px;
 }
+
 .city-name {
   font-size: 24px;
   font-weight: bold;
