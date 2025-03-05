@@ -33,9 +33,7 @@ export class NuevaPartida2Component {
 
   usuario: Usuario;
 
-  avatarUrl: string = "https://images.ctfassets.net/h6goo9gw1hh6/2sNZtFAWOdP1lmQ33VwRN3/e40b6ea6361a1abe28f32e7910f63b66/1-intro-photo-final.jpg?w=1200&h=992&fl=progressive&q=70&fm=jpg";
-  nombre: string= "Sin nombre"
-  nick: string="Player8123947"
+
 
   ciudades: Ciudad[] = [];
 
@@ -94,12 +92,12 @@ export class NuevaPartida2Component {
   private STORAGE_KEY = 'partidaGuardada';
 
   ngOnInit() {
-    this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
+    /*this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
       this.ciudades = response
       console.log(this.ciudades)
       this.virusIniciales();
-    })
-    //this.cargarPartida();
+    })*/
+    this.cargarPartida();
   }
 
   guardarPartida() {
@@ -121,14 +119,14 @@ export class NuevaPartida2Component {
     localStorage.setItem('partida_guardada', JSON.stringify(partida));
     console.log("Partida guardada en localStorage", partida);
 
-    /*this.partidaService.guardarPartida(this.partida_id, ciudades, this.numeroRonda).subscribe({
+    this.partidaService.guardarPartida(this.partida_id, this.ciudades, this.numeroRonda).subscribe({
       next: (response) => {
         console.log("Estado guardado:", response);
       },
       error: (error) => {
         console.error("Error al guardar el estado:", error);
       }
-    });*/
+    });
 
   }
 
@@ -148,6 +146,7 @@ export class NuevaPartida2Component {
         exterminado: { ...ciudad.exterminado },
         connectedCities: Array.isArray(ciudad.connectedCities) ? [...ciudad.connectedCities] : []
       }));
+      this.añadir();
       console.log("Partida cargada correctamente",this.ciudades)
       
     } else {
@@ -289,6 +288,20 @@ export class NuevaPartida2Component {
     console.log(",");
 
   }
+
+
+
+    añadir() {
+      this.ciudades.forEach(ciudad => {
+        if (Object.values(ciudad.diseaseCount).some(virus => virus > 0)) {
+          this.añadirCiudad(ciudad);
+        }
+      });
+    }
+  
+
+
+
   incrementarVirusEnCiudadesConectadas() {
     this.ciudades.forEach(ciudad => {
       (Object.keys(ciudad.diseaseCount) as Virus[]).forEach(virus => {

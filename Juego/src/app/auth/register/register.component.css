@@ -97,6 +97,10 @@
   height: 100%;
 }
 
+.error{
+  color: red;
+}
+
 
 .button-submit {
   margin: 20px 0 10px 0;

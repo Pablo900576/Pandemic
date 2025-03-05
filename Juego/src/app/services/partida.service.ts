@@ -18,9 +18,12 @@ export class PartidaService {
     return this.http.post(`${this.apiURL}game/nuevaPartida`, {email, ciudades});
   }
 
-  guardarPartida(partida_id: number, numeroRonda: number ,ciudades: any[]) {
-    const partida = { partida_id,  numeroRonda, ciudades };
+  guardarPartida(partida_id: number, ciudades: any[], numeroRonda: number): Observable<any> {
+    const partida = { partida_id, ciudades, numeroRonda };
     localStorage.setItem(this.STORAGE_KEY, JSON.stringify(partida));
+    console.log("Partida guardada en localStorage");
+    
+    return this.http.post(`${this.apiURL}game/guardarPartida`, { partida_id, ciudades, numeroRonda });
   }
 
   cargarPartida(partida_id: number): Observable<any> {

@@ -34,7 +34,7 @@ export class RegisterComponent {
   }
 
   enviar() {
-    if (this.miFormulario.valid) {   
+    if (this.miFormulario.valid && this.pwIguales()) {   
         const usuario: Usuario = {
         email: this.miFormulario.value.email,
         pw: this.miFormulario.value.contraseña,
@@ -55,8 +55,16 @@ export class RegisterComponent {
         }
       );
     } else {
+      if(this.miFormulario.invalid){
       console.log('Error maquina.')
       this.miFormulario.markAllAsTouched();
+    }else if(!this.pwIguales()){
+      console.log("Las contraseñas no coinciden")
+      this.miFormulario.markAllAsTouched()
+    }else{
+      console.log("Error!!")
+      this.miFormulario.markAllAsTouched()
+    }
     }
   }
 
