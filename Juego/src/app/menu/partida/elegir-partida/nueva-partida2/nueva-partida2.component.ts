@@ -103,8 +103,8 @@ export class NuevaPartida2Component {
   guardarPartida() {
     const partida = {
       partida_id: this.partida_id,
-    numeroRonda: this.numeroRonda,
-    ciudades: this.ciudades.map(ciudad => ({
+      numeroRonda: this.numeroRonda,
+      ciudades: this.ciudades.map(ciudad => ({
       ...ciudad, 
       coordinates: { ...ciudad.coordinates }, 
       brotes: { ...ciudad.brotes },
@@ -113,7 +113,7 @@ export class NuevaPartida2Component {
       connectedCities: [...ciudad.connectedCities]
     }))
     };
-    console.log(this.ciudades)
+
   
     // Guardar en LocalStorage
     localStorage.setItem('partida_guardada', JSON.stringify(partida));
@@ -154,6 +154,7 @@ export class NuevaPartida2Component {
       this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
         this.ciudades = response
         this.virusIniciales();
+        this.crearNuevaPartida();
       })
     }
   }
@@ -199,8 +200,8 @@ export class NuevaPartida2Component {
     this.perfilAbierto = false;
   }
 
-  /*crearNuevaPartida(){
-    this.partidaService.nuevaPartida(this.usuario.email, this.ciudades).subscribe(
+  crearNuevaPartida(){
+    this.partidaService.crearPartida(this.usuario.email!, this.ciudades).subscribe(
       (response) =>{
         console.log("Respuesta del servidor: ", response);
       },
@@ -209,7 +210,7 @@ export class NuevaPartida2Component {
       }
     );
   }
-*/
+
   ciudadSeleccionada: any = null;
   selectCity(ciudad: any) {
     this.ciudadSeleccionada = ciudad;
@@ -269,6 +270,8 @@ export class NuevaPartida2Component {
 
   renderedConnections: Set<string> = new Set();
 
+
+
   virus(x: any) {
     for (let i: number = 0; i < x; i++) {
       this.incrementarVirus();
@@ -286,7 +289,6 @@ export class NuevaPartida2Component {
     this.virus(this.cantidadRonda);
     this.resultadoPartida();
     console.log(",");
-
   }
 
 
@@ -302,34 +304,8 @@ export class NuevaPartida2Component {
 
 
 
-  incrementarVirusEnCiudadesConectadas() {
-    this.ciudades.forEach(ciudad => {
-      (Object.keys(ciudad.diseaseCount) as Virus[]).forEach(virus => {
-        if (ciudad.diseaseCount[virus] === 3 && ciudad.brotes[virus] == false) {
-          ciudad.brotes[virus] = true;
+  
 
-          console.log(`Ciudad ${ciudad.name} en brote del virus ${virus}`);
-
-
-          ciudad.connectedCities.forEach(conectada => {
-            const ciudadConectada = this.ciudades.find(c => c.name === conectada);
-
-            if (ciudadConectada) {
-              if (ciudadConectada.diseaseCount[virus] >= 3) {
-                console.log(`La ciudad conectada de ${ciudad.name}: ${ciudadConectada.name} ya tiene nivel 3 de virus ${virus}`)
-              } else {
-                ciudadConectada.diseaseCount[virus]++;
-                console.log(`Incrementado el virus ${virus} en la ciudad conectada de ${ciudad.name}: ${ciudadConectada.name}`);
-                ciudad.brotes[virus] = false;
-              }
-            }
-          });
-        } else if (ciudad.brotes[virus] == true) {
-          console.log(`Ciudad ${ciudad.name} ya tuvo un brote del virus ${virus}`);
-        }
-      });
-    });
-  }
   obtenerVirus(diseaseCount: { [key: string]: number }): { color: string; cantidad: number }[] {
     return Object.entries(diseaseCount)
       .filter(([_, cantidad]) => cantidad > 0)
@@ -384,6 +360,34 @@ export class NuevaPartida2Component {
 
 
     }
+  }
+  incrementarVirusEnCiudadesConectadas() {
+    this.ciudades.forEach(ciudad => {
+      (Object.keys(ciudad.diseaseCount) as Virus[]).forEach(virus => {
+        if (ciudad.diseaseCount[virus] === 3 && ciudad.brotes[virus] == false) {
+          ciudad.brotes[virus] = true;
+
+          console.log(`Ciudad ${ciudad.name} en brote del virus ${virus}`);
+
+
+          ciudad.connectedCities.forEach(conectada => {
+            const ciudadConectada = this.ciudades.find(c => c.name === conectada);
+
+            if (ciudadConectada) {
+              if (ciudadConectada.diseaseCount[virus] >= 3) {
+                console.log(`La ciudad conectada de ${ciudad.name}: ${ciudadConectada.name} ya tiene nivel 3 de virus ${virus}`)
+              } else {
+                ciudadConectada.diseaseCount[virus]++;
+                console.log(`Incrementado el virus ${virus} en la ciudad conectada de ${ciudad.name}: ${ciudadConectada.name}`);
+                ciudad.brotes[virus] = false;
+              }
+            }
+          });
+        } else if (ciudad.brotes[virus] == true) {
+          console.log(`Ciudad ${ciudad.name} ya tuvo un brote del virus ${virus}`);
+        }
+      });
+    });
   }
 
   añadirCiudad(ciudadAleatoria: any) {
@@ -502,7 +506,7 @@ export class NuevaPartida2Component {
 
   resultadoPartida() {
     const todasInfectadas = this.ciudades.every(ciudad =>
-      Object.values(ciudad.diseaseCount).every(cantidad => cantidad == 2)
+      Object.values(ciudad.diseaseCount).every(cantidad => cantidad >= 2)
     );
 
     const noInfectadas = this.ciudades.every(ciudad =>
@@ -511,6 +515,7 @@ export class NuevaPartida2Component {
 
     if (todasInfectadas) {
       alert("PERDISTEEE PRINGADO!!")
+      this.router.navigate(['/menu']);
 
     } else if (noInfectadas) {
       alert("GANASTE MONGOL")
