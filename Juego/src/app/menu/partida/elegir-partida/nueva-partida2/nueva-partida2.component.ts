@@ -94,13 +94,62 @@ export class NuevaPartida2Component {
   private STORAGE_KEY = 'partidaGuardada';
 
   ngOnInit() {
+    /*this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
+      this.ciudades = response
+      console.log(this.ciudades)
+      this.virusIniciales();
+    })*/
+    this.cargarPartida();
+  }
+
+  guardarPartida() {
+    const partida = {
+      partida_id: this.partida_id,
+    numeroRonda: this.numeroRonda,
+    ciudades: this.ciudades.map(ciudad => ({
+      ...ciudad, 
+      coordinates: { ...ciudad.coordinates }, 
+      brotes: { ...ciudad.brotes },
+      diseaseCount: { ...ciudad.diseaseCount },
+      exterminado: { ...ciudad.exterminado },
+      connectedCities: [...ciudad.connectedCities]
+    }))
+    };
+    console.log(this.ciudades)
+  
+    // Guardar en LocalStorage
+    localStorage.setItem('partida_guardada', JSON.stringify(partida));
+    console.log("Partida guardada en localStorage", partida);
+
+    /*this.partidaService.guardarPartida(this.partida_id, ciudades, this.numeroRonda).subscribe({
+      next: (response) => {
+        console.log("Estado guardado:", response);
+      },
+      error: (error) => {
+        console.error("Error al guardar el estado:", error);
+      }
+    });*/
+
+  }
+
+  cargarPartida(){
     const partidaGuardada = localStorage.getItem(this.STORAGE_KEY);
     if (partidaGuardada) {
       console.log("Cargando partida desde localStorage");
       const partida = JSON.parse(partidaGuardada);
-      this.partida_id = partida.partida_id;
-      this.ciudades = partida.ciudades;
       this.numeroRonda = partida.numeroRonda;
+      this.partida_id = partida.partida_id;
+      this.ciudades = partida.ciudades.map((ciudad: Ciudad) => ({
+        name: ciudad.name,
+        region: ciudad.region,
+        coordinates: { ...ciudad.coordinates },
+        brotes: { ...ciudad.brotes },
+        diseaseCount: { ...ciudad.diseaseCount },
+        exterminado: { ...ciudad.exterminado },
+        connectedCities: Array.isArray(ciudad.connectedCities) ? [...ciudad.connectedCities] : []
+      }));
+      console.log("Partida cargada correctamente",this.ciudades)
+      
     } else {
       console.log("No hay partida en localStorage, cargando desde API");
       this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
@@ -108,14 +157,12 @@ export class NuevaPartida2Component {
         this.virusIniciales();
       })
     }
-
   }
 
   obtenerIdPartida() {
     this.partidaService.obtenerIdPartida(this.usuario.email!).subscribe({
       next: (response) => {
         this.partida_id = response.partida_id;
-        console.log(response)
         console.log(this.partida_id)
         this.guardarPartida();
       },
@@ -135,27 +182,7 @@ export class NuevaPartida2Component {
     }
   }
 
-  guardarPartida() {
-    const ciudades = this.ciudades.map(ciudad => ({
-      name: ciudad.name,
-      diseaseCount: ciudad.diseaseCount,
-      brotes: ciudad.brotes,
-    }));
-
-    const partida = { partida_id: this.partida_id, ciudades, numeroRonda: this.numeroRonda };
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(partida));
-    console.log("Partida guardada en localStorage");
-
-    this.partidaService.guardarPartida(this.partida_id, ciudades, this.numeroRonda).subscribe({
-      next: (response) => {
-        console.log("Estado guardado:", response);
-      },
-      error: (error) => {
-        console.error("Error al guardar el estado:", error);
-      }
-    });
-
-  }
+ 
 
   reiniciarPartida() {
     localStorage.removeItem(this.STORAGE_KEY);
