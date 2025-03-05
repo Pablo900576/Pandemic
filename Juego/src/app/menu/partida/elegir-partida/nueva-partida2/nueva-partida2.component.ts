@@ -94,12 +94,12 @@ export class NuevaPartida2Component {
   private STORAGE_KEY = 'partidaGuardada';
 
   ngOnInit() {
-    /*this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
+    this.cargarCiudad.getCiudadesEuropa().subscribe(response => {
       this.ciudades = response
       console.log(this.ciudades)
       this.virusIniciales();
-    })*/
-    this.cargarPartida();
+    })
+    //this.cargarPartida();
   }
 
   guardarPartida() {
