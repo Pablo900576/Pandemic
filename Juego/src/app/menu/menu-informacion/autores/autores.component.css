@@ -24,6 +24,13 @@ body {
     background-color: rgba(186, 208, 211, 0.9);
 }
 
+.general img{
+    width: auto;
+    height: 30vh;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
 .autores {
     font-size: 25px;
     padding: 15px;
